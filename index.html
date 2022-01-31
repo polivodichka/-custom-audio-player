@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,75 @@
     <link rel="stylesheet" href="style.css">
     <title>Audio player</title>
 </head>
+
 <body>
+    <div class="waveWrapper waveAnimation">
+        <div class="waveWrapperInner bgTop">
+          <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+        </div>
+        <div class="waveWrapperInner bgMiddle">
+          <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+        </div>
+        <div class="waveWrapperInner bgBottom">
+          <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+        </div>
+      </div>
     
+    <audio src="" id="audio-source"></audio>
+
+    <div class="wrapper">
+        <p class="logo">
+            <svg>
+                <use xlink:href="sprite.svg#logo"></use>
+            </svg>
+        </p>
+
+
+        <div class="player">
+            <img src="assets/covers/sia-angel-by-the-wings.jpg" alt="album cover" id="cover">
+            <audio id="audio-player">
+                <source src="assets/audio/Sia_-_Angel_By_The_Wings.mp3" type="audio/mp3">
+            </audio>
+            
+            <div class="controls-btns">
+                <button id="previous" class="control-btn"><svg>
+                        <use xlink:href="sprite.svg#previous"></use>
+                    </svg></button>
+                <button id="play" class="control-btn">
+                    <svg>
+                        <use xlink:href="sprite.svg#play" id="play-svg"></use>
+                    </svg>
+                </button>
+                <button id="next" class="control-btn"><svg>
+                        <use xlink:href="sprite.svg#next"></use>
+                    </svg></button>
+                <!--<input type="range" id="volume" min="0" max="100">-->
+            </div>
+
+            <h2>Title</h2>
+            <h3>author</h3>
+        </div>
+
+
+        <div class="controls-time">
+            <div class="progress-bar">
+                <input type="range" min="0" max="10000" id="progress" value="0" class="slider">
+                <div class="time">
+                    <span id="currentTime">00:00</span>
+                    <span id="duration">00:00</span>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <script src="script.js"></script>
+
+    </div>
 </body>
+
 </html>
