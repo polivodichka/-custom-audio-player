@@ -100,7 +100,7 @@ button svg{
     border: 0;
     background: url('assets/boat.png');
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     cursor: pointer;
     filter: drop-shadow(-40px 0 15px #ff7b00);
     animation: animatedBackground 10s linear infinite;
