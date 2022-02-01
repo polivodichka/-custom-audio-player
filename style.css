@@ -101,6 +101,7 @@ button svg{
     background: url('assets/boat.png');
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
     cursor: pointer;
     filter: drop-shadow(-40px 0 15px #ff7b00);
     animation: animatedBackground 10s linear infinite;
