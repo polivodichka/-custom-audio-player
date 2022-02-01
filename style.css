@@ -95,7 +95,7 @@ button svg{
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 10%;
+    width: clamp(20px, 15%, 100px);
     height: 70px;
     border: 0;
     background: url('assets/boat.png');
