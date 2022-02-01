@@ -38,7 +38,7 @@ body{
     margin: 0 auto;
 }
 .controls-time{
-    min-width: 100vh;
+    min-width: 100%;
     position: absolute;
     bottom: 15px;
     right: 0;
@@ -56,10 +56,6 @@ body{
     fill: var(--main-el-color);
     height: 30px;
     max-width: 30px;
-}
-.hide{
-    display: none;
-    position: absolute;
 }
 .player{
     text-align: center;
@@ -99,10 +95,11 @@ button svg{
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 140px;
+    width: 10%;
     height: 70px;
     border: 0;
     background: url('assets/boat.png');
+    background-position: center;
     background-size: cover;
     cursor: pointer;
     filter: drop-shadow(-40px 0 15px #ff7b00);
