@@ -1,3 +1,4 @@
+/*
 :root
 {
 	--bg-img: url(assets/6493149675675af33dc41766ac2108dfc95305a8c174_b.jpg);
@@ -8,7 +9,7 @@
 body{
 
     /*background: var(--bg-img) no-repeat;*/
-    /*background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);*/
+    /*background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);*//*
     background-size: 100%;
     background-position: center center;
     backdrop-filter: blur(0px);
@@ -190,4 +191,130 @@ button svg{
 }
 .waveAnimation .waveBottom {
     animation: move_wave 15s linear infinite;
+}*/
+@font-face
+{
+	font-family: 'Title';
+	src: url("assets/fonts/FutureLight/FutureLight.ttf");
 }
+@font-face
+{
+	font-family: 'Artist';
+	src: url("assets/fonts/Roses/RosesBoleroDemo.ttf");
+}
+
+:root{
+    --bg_cover: url(./assets/covers/sia-angel-by-the-wings.jpg);
+    --cover-size: 70vh;
+    --bg-color: white;
+}
+.wraper{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+.cover_img{
+    height: var(--cover-size);
+    width: var(--cover-size);
+    position: relative;
+    background: var(--bg_cover) no-repeat;
+    background-size: 82%;
+    background-position: center;
+    margin: -3em auto 0 auto;
+    z-index: -1;
+    
+}
+.cover_img svg{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+.cover_img svg{
+    fill: var(--bg-color);
+}
+body{
+    background-color: var(--bg-color);
+}
+.author{
+    font-family: 'Artist';
+    font-size: calc(1em + 2vw);
+    text-align: center;
+}
+.title{
+    font-family: 'Title';
+    font-size: calc(1em + 4vw);
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+.controls-btns{
+    text-align: center;
+    margin-top: -6vh;
+}
+button{
+    
+    background-color: transparent;
+    border: none;
+    outline: 0;
+}
+button svg{
+    height: 50px;
+    width: 50px;
+}
+.controls-time{
+    width: 100%;
+}
+.progress-bar{
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.time{
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Artist';
+}
+
+
+.slider{
+    width: 100%;
+}
+input[type='range'] {
+    overflow: hidden;
+    -webkit-appearance: none;
+    background-color: rgba(255,255,255,0.7);
+  }
+  
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: #13bba4;
+    margin-top: -1px;
+  }
+  
+  input[type='range']::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 10px;
+    cursor: ew-resize;
+    background: #434343;
+    box-shadow: -1000px 0 0 1000px #43e5f7;
+  }
+  
+  input[type="range"]::-moz-range-progress {
+    background-color: #43e5f7;
+  }
+  
+  input[type="range"]::-moz-range-track {
+    background-color: rgba(255,255,255,0.7);
+  }
+  
+  input[type="range"]::-ms-fill-lower {
+    background-color: #43e5f7;
+  }
+  
+  input[type="range"]::-ms-fill-upper {
+    background-color: rgba(255,255,255,0.7);
+  }

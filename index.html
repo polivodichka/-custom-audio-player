@@ -10,53 +10,33 @@
 </head>
 
 <body>
-    <div class="waveWrapper waveAnimation">
-        <div class="waveWrapperInner bgTop">
-          <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
-        </div>
-        <div class="waveWrapperInner bgMiddle">
-          <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
-        </div>
-        <div class="waveWrapperInner bgBottom">
-          <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
-        </div>
-      </div>
-    
-    <audio src="" id="audio-source"></audio>
+   <div class="wrapper">
+        <h1 class="title">Title</h1>
 
-    <div class="wrapper">
-        <p class="logo">
-            <svg>
-                <use xlink:href="sprite.svg#logo"></use>
+        <div class="cover_img">
+            <svg class="svg_mask">
+                <use xlink:href="sprite.svg#img_mask"></use>
             </svg>
-        </p>
-
-
-        <div class="player">
-            <img src="assets/covers/sia-angel-by-the-wings.jpg" alt="album cover" id="cover">
-            <audio id="audio-player">
-                <source src="assets/audio/Sia_-_Angel_By_The_Wings.mp3" type="audio/mp3">
-            </audio>
-            
-            <div class="controls-btns">
-                <button id="previous" class="control-btn"><svg>
-                        <use xlink:href="sprite.svg#previous"></use>
-                    </svg></button>
-                <button id="play" class="control-btn">
-                    <svg>
-                        <use xlink:href="sprite.svg#play" id="play-svg"></use>
-                    </svg>
-                </button>
-                <button id="next" class="control-btn"><svg>
-                        <use xlink:href="sprite.svg#next"></use>
-                    </svg></button>
-                <!--<input type="range" id="volume" min="0" max="100">-->
-            </div>
-
-            <h2>Title</h2>
-            <h3>author</h3>
+            <!--<img src="assets/covers/sia-angel-by-the-wings.jpg" alt="album cover" id="cover">-->
         </div>
 
+
+        <div class="controls-btns">
+            <button id="previous" class="control-btn"><svg>
+                    <use xlink:href="sprite.svg#previous"></use>
+                </svg></button>
+            <button id="play" class="control-btn">
+                <svg>
+                    <use xlink:href="sprite.svg#play" id="play-svg"></use>
+                </svg>
+            </button>
+            <button id="next" class="control-btn"><svg>
+                    <use xlink:href="sprite.svg#next"></use>
+                </svg></button>
+            <input type="range" id="volume" min="0" max="100">
+        </div>
+
+        <h2 class="author">author</h2>
 
         <div class="controls-time">
             <div class="progress-bar">
@@ -69,14 +49,10 @@
 
         </div>
 
-
-
-
     </div>
 
     <script src="script.js"></script>
 
-    </div>
 </body>
 
 </html>

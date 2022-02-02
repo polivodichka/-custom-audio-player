@@ -1,17 +1,63 @@
 
-let audio = document.querySelector('#audio-player');
+// Create the audio element for the player
+let audio = document.createElement('audio');
+let audio_index = 0;
+
+let cover = document.querySelector('.cover_img');
+let title = document.querySelector('.title');
+let author = document.querySelector('.author');
+
+// Define the list of tracks that have to be played
+let track_list = [
+  {
+    name: "Angel by the wings",
+    artist: "Sia",
+    image: "./assets/covers/sia-angel-by-the-wings.jpg",
+    path: "./assets/audio/Sia_-_Angel_By_The_Wings.mp3"
+  },
+  {
+    name: "She is on my mind",
+    artist: "JP Cooper",
+    image: "./assets/covers/on-my-mind.jpg",
+    path: "./assets/audio/JP Cooper - She's On My Mind.mp3"
+  },
+  {
+    name: "Remember The Name",
+    artist: "Fort Minor, Styles of Beyond",
+    image: "./assets/covers/remember-the-name.jpg",
+    path: "./assets/audio/Fort Minor - Remember The Name.mp3"
+  },
+  {
+    name: "The Motto",
+    artist: "Tiesto feat. Ava Max",
+    image: "./assets/covers/the-motto.jpg",
+    path: "./assets/audio/Tiesto feat. Ava Max - The Motto.mp3"
+  },
+];
+
+audio.src=track_list[audio_index].path;
+changeCoverTitleAuthor(audio_index);
 
 const playBtn = document.querySelector('#play');
 playBtn.onclick = play;
-//document.querySelector('#volume').oninput = volume;
-document.querySelector('#progress').oninput = currentTimeUpdate;
 
+document.querySelector('#volume').oninput = volume;
 
-let display;
-let progress = document.querySelector('#progress');
+const progress = document.querySelector('#progress');
+progress.oninput = currentTimeUpdate;
 
+const nextBtn = document.querySelector('#next');
+nextBtn.onclick = next;
+
+const previousBtn = document.querySelector('#previous');
+previousBtn.onclick = backToStart;
+previousBtn.addEventListener('dblclick', function (e) {
+    console.log('large');
+});
 
 audio.ontimeupdate = progressUpdate;
+
+
 function play(){
     if(document.querySelector('#play.active')){
         audio.pause();
@@ -24,43 +70,49 @@ function play(){
         document.getElementById('play-svg').href.baseVal = `sprite.svg#pause`;
     }
     
+    audio.onended = next;
+    
 }
 
 
 function backToStart(){
+
+    if (audio.currentTime > 5){
+        audio.pause();
+        audio.currentTime = 0;    
+        audio.play();
+    }
+    else
+    previous();
+}
+
+function changeStopToPlayImg(){
+    if(!document.querySelector('#play.active')){        
+        playBtn.classList.toggle('active');
+        document.getElementById('play-svg').href.baseVal = `sprite.svg#pause`;
+    }
+}
+
+function previous(){
+    audio_index===0?audio_index=track_list.length-1:--audio_index;
+    audio.src=track_list[audio_index].path;
     audio.pause();
     audio.currentTime = 0;    
     audio.play();
-}
-function previous(){
-    console.log('previous');
-}
-
-const previousBtn = document.querySelector('#previous');
-previousBtn.onclick = backToStart;
-previousBtn.addEventListener('dblclick', e =>{
-    previous();
-})
-
-function next(){
-    console.log('next');
+    changeStopToPlayImg();   
+    changeCoverTitleAuthor(audio_index);   
 }
 
-const nextBtn = document.querySelector('#next');
-nextBtn.onclick = next;
-
-/*function speedUp(){
+function next(){    
+    audio_index===track_list.length-1?audio_index=0:++audio_index;
+    audio.src=track_list[audio_index].path;
+    audio.pause();
+    audio.currentTime = 0;    
     audio.play();
-    audio.playbackRate *= 2;
+    changeStopToPlayImg();
+    changeCoverTitleAuthor(audio_index);
 }
-function speedDown(){
-    audio.play();
-    audio.playbackRate /= 2;
-}
-function speedNormal(){
-    audio.play();
-    audio.playbackRate = 1;
-}*/
+
 function volume(){
     let v = this.value;
     
@@ -72,7 +124,7 @@ function progressUpdate(){
     let currentTime = audio.currentTime;
     progress.value = 10000 * currentTime / duration;
     document.querySelector('#currentTime').textContent = formatTime(currentTime);
-    document.querySelector('#duration').textContent = formatTime(duration);
+    document.querySelector('#duration').textContent = duration?formatTime(duration):"00:00";
 }
 function currentTimeUpdate(){
     console.log('hey')
@@ -82,6 +134,7 @@ function currentTimeUpdate(){
     audio.pause();
     audio.currentTime = v * duration / 10000;
     audio.play();
+    changeStopToPlayImg();
 }
 
 function formatTime(str){
@@ -90,3 +143,12 @@ function formatTime(str){
     let seconds = time - minutes * 60;
     return (minutes<10?'0'+minutes:minutes) + ':' + (seconds<10?'0'+seconds:seconds);
 }
+
+function changeCoverTitleAuthor(index){
+    cover.style.backgroundImage = `url(${track_list[index].image})`;
+    title.textContent = track_list[index].name;
+    author.textContent = track_list[index].artist;
+}
+
+document.querySelector(".svg_mask").style.setProperty('--bg-color', 'salmon');
+document.body.style.setProperty('--bg-color', 'salmon');
