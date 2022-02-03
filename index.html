@@ -27,19 +27,30 @@
                 <span id="duration">00:00</span>
             </div>
 
-            <div class="controls-btns">
-                <button id="previous" class="control-btn" ><svg>
-                        <use xlink:href="sprite.svg#previous"></use>
-                    </svg></button>
-                <button id="play" class="control-btn">
-                    <svg>
-                        <use xlink:href="sprite.svg#play" id="play-svg"></use>
+            <div class="controls">
+                <div class="controls-btns">
+                    <button id="previous" class="control-btn" ><svg>
+                            <use xlink:href="sprite.svg#previous"></use>
+                        </svg></button>
+                    <button id="play" class="control-btn">
+                        <svg>
+                            <use xlink:href="sprite.svg#play" id="play-svg"></use>
+                        </svg>
+                    </button>
+                    <button id="next" class="control-btn"><svg>
+                            <use xlink:href="sprite.svg#next"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="control-btns-right">
+                    <button id="mute" class="control-btn"><svg>
+                        <use xlink:href="sprite.svg#volume"></use>
                     </svg>
-                </button>
-                <button id="next" class="control-btn"><svg>
-                        <use xlink:href="sprite.svg#next"></use>
-                    </svg></button>
-                <input type="range" id="volume" min="0" max="100">
+                    </button>
+                    <div class="volume">                    
+                        <input type="range" id="volume" min="0" max="100" >
+                    </div>
+                </div>
             </div>
         </div>
     </div>

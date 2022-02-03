@@ -86,9 +86,14 @@ body {
     height: var(--cover-size);
     width: var(--cover-size);
 }
-.controls-btns{
+.controls-btns, 
+.control-btns-right{
     fill: var(--svg-color);
-    margin-top: 10px;
+    display: flex;
+}
+.controls{
+    display: flex;
+    justify-content: space-between;
 }
 
 button,
@@ -98,6 +103,7 @@ button:focus{
     outline: 0;
     opacity: 0.6;
     cursor: pointer;
+    z-index: 2;
 }
 button:hover{
     transition: opacity 0.5s ease-in-out;
@@ -127,45 +133,45 @@ button svg {
 }
 
 
-.slider {
+input[type=range] {
     width: 100%;
 }
 
-input[type='range'] {
+input[type=range] {
     overflow: hidden;
     -webkit-appearance: none;
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-input[type='range']::-webkit-slider-runnable-track {
+input[type=range]::-webkit-slider-runnable-track {
     height: 10px;
     -webkit-appearance: none;
     color: #13bba4;
     margin-top: -1px;
 }
 
-input[type='range']::-webkit-slider-thumb {
+input[type=range]::-webkit-slider-thumb {
     width: 10px;
     -webkit-appearance: none;
     height: 10px;
-    cursor: ew-resize;
+    cursor: pointer;
     background: #434343;
     box-shadow: -1000px 0 0 1000px #43e5f7;
 }
 
-input[type="range"]::-moz-range-progress {
+input[type=range]::-moz-range-progress {
     background-color: #43e5f7;
 }
 
-input[type="range"]::-moz-range-track {
+input[type=range]::-moz-range-track {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-input[type="range"]::-ms-fill-lower {
+input[type=range]::-ms-fill-lower {
     background-color: #43e5f7;
 }
 
-input[type="range"]::-ms-fill-upper {
+input[type=range]::-ms-fill-upper {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -186,4 +192,27 @@ h2{
 }
 h2:hover{
     opacity: 1;
+}
+.volume{
+    padding: 0;
+    width: fit-content;
+    height: 110px;
+    position: relative;
+    margin-top: -80px;
+    margin-left: -90px;
+    opacity: 0;
+    cursor: pointer;
+}
+.volume:hover{
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+#volume{
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    transform: rotate(-90deg);
 }

@@ -173,7 +173,7 @@ function changeCoverTitleAuthor(index){
             .then(color => {
                 document.body.style.backgroundColor = color.rgba;
                 document.body.style.color = color.isDark ? '#fff' : '#000';
-                document.querySelector('.controls-btns').style.setProperty('--svg-color', color.isDark ? '#fff' : '#000');
+                document.body.style.setProperty('--svg-color', color.isDark ? '#fff' : '#000');
             })
             .catch(e => {
                 console.log(e);
