@@ -257,3 +257,23 @@ footer a{
 .off:focus{
     opacity: 0.3;
 }
+
+@media (max-width: 768px)
+{
+    :root {
+        --cover-size: clamp(50px, 50vh, 250px);
+    }
+    .wrap_cover {
+        top: 15vh;
+    }    
+    .record {
+        transition: top 1s ease 0s;
+    }    
+    .record.active {
+        top: -47%;
+        left: 0;
+        transition: top 1s ease 0s;
+        transition: top 1s ease 0s;
+        animation: moving 3s infinite linear;
+    }
+}
