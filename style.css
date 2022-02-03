@@ -261,10 +261,10 @@ footer a{
 @media (max-width: 768px)
 {
     :root {
-        --cover-size: clamp(50px, 50vh, 250px);
+        --cover-size: 100vw;
     }
     .wrap_cover {
-        top: 15vh;
+        top: 30vh;
     }    
     .record {
         transition: top 1s ease 0s;
