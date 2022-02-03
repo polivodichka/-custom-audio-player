@@ -11,39 +11,39 @@
 
 <body>
    <div class="wrapper">
-        <h1 class="title">Title</h1>
 
-        <div class="cover_img">
-            <svg class="svg_mask">
-                <use xlink:href="sprite.svg#img_mask"></use>
-            </svg>
-            <!--<img src="assets/covers/sia-angel-by-the-wings.jpg" alt="album cover" id="cover">-->
+        <div class="wrap_cover" id="play_on_cover">
+            
+        <div class="record"></div>
+        <div class="cover_img"></div>
         </div>
 
-
-        <div class="controls-btns">
-            <button id="previous" class="control-btn"><svg>
-                    <use xlink:href="sprite.svg#previous"></use>
-                </svg></button>
-            <button id="play" class="control-btn">
-                <svg>
-                    <use xlink:href="sprite.svg#play" id="play-svg"></use>
-                </svg>
-            </button>
-            <button id="next" class="control-btn"><svg>
-                    <use xlink:href="sprite.svg#next"></use>
-                </svg></button>
-            <input type="range" id="volume" min="0" max="100">
-        </div>
-
-        <h2 class="author">author</h2>
+        
 
         <div class="controls-time">
             <div class="progress-bar">
+                <p>
+                    <span class="title">Title</span> <span> - </span> <span<span class="author">author</span></span>
+                </p>
                 <input type="range" min="0" max="10000" id="progress" value="0" class="slider">
                 <div class="time">
                     <span id="currentTime">00:00</span>
                     <span id="duration">00:00</span>
+                </div>
+
+                <div class="controls-btns">
+                    <button id="previous" class="control-btn"><svg>
+                            <use xlink:href="sprite.svg#previous"></use>
+                        </svg></button>
+                    <button id="play" class="control-btn">
+                        <svg>
+                            <use xlink:href="sprite.svg#play" id="play-svg"></use>
+                        </svg>
+                    </button>
+                    <button id="next" class="control-btn"><svg>
+                            <use xlink:href="sprite.svg#next"></use>
+                        </svg></button>
+                    <input type="range" id="volume" min="0" max="100">
                 </div>
             </div>
 

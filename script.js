@@ -6,6 +6,7 @@ let audio_index = 0;
 let cover = document.querySelector('.cover_img');
 let title = document.querySelector('.title');
 let author = document.querySelector('.author');
+let record_disk = document.querySelector('.record');
 
 // Define the list of tracks that have to be played
 let track_list = [
@@ -39,7 +40,10 @@ audio.src=track_list[audio_index].path;
 changeCoverTitleAuthor(audio_index);
 
 const playBtn = document.querySelector('#play');
+const playBtnCover = document.querySelector('#play_on_cover');
+
 playBtn.onclick = play;
+playBtnCover.onclick = play;
 
 document.querySelector('#volume').oninput = volume;
 
@@ -63,11 +67,13 @@ function play(){
         audio.pause();
         playBtn.classList.remove('active');
         document.getElementById('play-svg').href.baseVal = `sprite.svg#play`;
+        record_disk.classList.remove('active');
     }
     else{        
         audio.play();
         playBtn.classList.toggle('active');
         document.getElementById('play-svg').href.baseVal = `sprite.svg#pause`;
+        record_disk.classList.toggle('active');
     }
     
     audio.onended = next;
@@ -90,6 +96,7 @@ function changeStopToPlayImg(){
     if(!document.querySelector('#play.active')){        
         playBtn.classList.toggle('active');
         document.getElementById('play-svg').href.baseVal = `sprite.svg#pause`;
+        record_disk.classList.toggle('active');
     }
 }
 
@@ -150,5 +157,5 @@ function changeCoverTitleAuthor(index){
     author.textContent = track_list[index].artist;
 }
 
-document.querySelector(".svg_mask").style.setProperty('--bg-color', 'salmon');
-document.body.style.setProperty('--bg-color', 'salmon');
+//document.querySelector(".svg_mask").style.setProperty('--bg-color', 'salmon');
+//document.body.style.setProperty('--bg-color', 'salmon');

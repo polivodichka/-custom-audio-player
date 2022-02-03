@@ -205,8 +205,11 @@ button svg{
 
 :root{
     --bg_cover: url(./assets/covers/sia-angel-by-the-wings.jpg);
-    --cover-size: 70vh;
+    --cover-size: clamp(100px, 40vw, 450px);
     --bg-color: white;
+}
+body{
+    background-color: yellowgreen;
 }
 .wraper{
     display: flex;
@@ -214,43 +217,50 @@ button svg{
     max-width: 100%;
 }
 .cover_img{
-    height: var(--cover-size);
-    width: var(--cover-size);
-    position: relative;
+    height: clamp(var(--cover-size), var(--cover-size), var(--cover-size));
+    width: clamp(var(--cover-size), var(--cover-size), var(--cover-size));
     background: var(--bg_cover) no-repeat;
-    background-size: 82%;
-    background-position: center;
-    margin: -3em auto 0 auto;
-    z-index: -1;
+    background-size: cover;
+    position: absolute;
+    z-index: 2;
+    display: inline-block;
+    top: 0;
+    left: 0;
     
 }
-.cover_img svg{
-    height: 100%;
-    width: 100%;
-    margin: 0;
+.record{
+    height: clamp(var(--cover-size), var(--cover-size), var(--cover-size));
+    width: clamp(var(--cover-size), var(--cover-size), var(--cover-size));
+    background: url(./assets/02b11ede1981c7c9c5f5938e77fe2c8f753e00c7.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    transition: left 1s ease 0s;  
 }
-.cover_img svg{
-    fill: var(--bg-color);
+@keyframes moving {
+    100% {transform: rotate(-360deg);}
 }
-body{
-    background-color: var(--bg-color);
+	.record.active
+	{
+		left: -45%;
+        transition: left 1s ease 0s;
+        animation: moving 3s infinite linear;
+        transition: left 1s ease 0s;
+	}
+
+.wrap_cover{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: 0 auto;
+    filter: drop-shadow(1px 5px 10px black);
+    height: var(--cover-size);
+    width:  var(--cover-size);
 }
-.author{
-    font-family: 'Artist';
-    font-size: calc(1em + 2vw);
-    text-align: center;
-}
-.title{
-    font-family: 'Title';
-    font-size: calc(1em + 4vw);
-    text-align: center;
-    margin-top: 0;
-    padding-top: 0;
-}
-.controls-btns{
-    text-align: center;
-    margin-top: -6vh;
-}
+
 button{
     
     background-color: transparent;
