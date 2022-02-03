@@ -1,222 +1,43 @@
-/*
-:root
-{
-	--bg-img: url(assets/6493149675675af33dc41766ac2108dfc95305a8c174_b.jpg);
-    --hlgt-color: #ff7b00;
-    --main-el-color: rgba(255, 255, 255, 0.9);
+@font-face {
+    font-family: 'Title';
+    src: url("assets/fonts/Broadway_Regular.ttf");
 }
 
-body{
-
-    /*background: var(--bg-img) no-repeat;*/
-    /*background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);*//*
-    background-size: 100%;
-    background-position: center center;
-    backdrop-filter: blur(0px);
-    margin: 0;
-    min-height: 100vh;
-    overflow:  hidden;
-}
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
-.logo{
-    size: 50px 50px;
-}
-.logo svg{
-    height: 20px;
-    width: 20px;   
+@font-face {
+    font-family: 'Artist';
+    src: url("assets/fonts/FuturaLight.otf");
 }
 
-.progress-bar input{
-    width: 100%;
-}
-#cover{
-    width: clamp(100px, 400px, 100%);
-    margin: 0 auto;
-}
-.controls-time{
-    min-width: 100%;
-    position: absolute;
-    bottom: 15px;
-    right: 0;
-    left: 0;
-}
-.controls-btns{
-    text-align: center;
-}
-.time{
-    min-width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-.control-btn svg{
-    fill: var(--main-el-color);
-    height: 30px;
-    max-width: 30px;
-}
-.player{
-    text-align: center;
-    filter: drop-shadow(16px 26px 20px var(--hlgt-color));
-}
-.player h2, 
-.player h3{
-  color:var(--main-el-color);
-  filter: drop-shadow(0px 16px 20px var(--hlgt-color));
-}
-button{
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-button svg{    
-    filter: drop-shadow(16px 16px 20px var(--hlgt-color));
-} 
-
-
-.slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 10px;
-    border-radius: 5px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 1;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-}
-
-.slider:hover {
-    filter: drop-shadow(-40px 0 15px #ff7b00);
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: clamp(20px, 15%, 100px);
-    height: 70px;
-    border: 0;
-    background: url('assets/boat.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    filter: drop-shadow(-40px 0 15px #ff7b00);
-    animation: animatedBackground 10s linear infinite;
-}
-
-.slider::-moz-range-thumb {
-    width: 70px;
-    height: 70px;
-    border: 0;
-    background: url('assets/rocket.png');
-    background-size: cover;
-    cursor: pointer;    
-    filter: drop-shadow(-40px 0 15px #ff7b00);
-}
-@keyframes animatedBackground {
-    from { background-position: 0 0; }
-    to { background-position: 100% 0; }
-    }
-
-@keyframes move_wave {
-    0% {
-        transform: translateX(0) translateZ(0) scaleY(1)
-    }
-    50% {
-        transform: translateX(-25%) translateZ(0) scaleY(0.55)
-    }
-    100% {
-        transform: translateX(-50%) translateZ(0) scaleY(1)
-    }
-}
-.waveWrapper {
-    overflow: hidden;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    margin: auto;
-    z-index: -50;
-}
-.waveWrapperInner {
-    position: absolute;
-    width: 100%;
-    overflow: hidden;
-    height: 100%;
-    bottom: -1px;
-    background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
-}
-.bgTop {
-    z-index: 15;
-    opacity: 0.5;
-}
-.bgMiddle {
-    z-index: 10;
-    opacity: 0.75;
-}
-.bgBottom {
-    z-index: 5;
-}
-.wave {
-    position: absolute;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background-repeat: repeat no-repeat;
-    background-position: 0 bottom;
-    transform-origin: center bottom;
-}
-.waveTop {
-    background-size: 50% 100px;
-}
-.waveAnimation .waveTop {
-  animation: move-wave 3s;
-   -webkit-animation: move-wave 3s;
-   -webkit-animation-delay: 1s;
-   animation-delay: 1s;
-}
-.waveMiddle {
-    background-size: 50% 120px;
-}
-.waveAnimation .waveMiddle {
-    animation: move_wave 10s linear infinite;
-}
-.waveBottom {
-    background-size: 50% 100px;
-}
-.waveAnimation .waveBottom {
-    animation: move_wave 15s linear infinite;
-}*/
-@font-face
-{
-	font-family: 'Title';
-	src: url("assets/fonts/FutureLight/FutureLight.ttf");
-}
-@font-face
-{
-	font-family: 'Artist';
-	src: url("assets/fonts/Roses/RosesBoleroDemo.ttf");
-}
-
-:root{
+:root {
     --bg_cover: url(./assets/covers/sia-angel-by-the-wings.jpg);
-    --cover-size: clamp(100px, 40vw, 450px);
+    --cover-size: clamp(50px, 50vw, 450px);
     --bg-color: white;
+    --svg-color: black;
 }
-body{
-    background-color: yellowgreen;
+
+* {
+    box-sizing: border-box;
 }
-.wraper{
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    transition: background-image 1s ease-in-out;
+}
+
+.wraper {
     display: flex;
     flex-wrap: wrap;
     max-width: 100%;
 }
-.cover_img{
+
+.cover_img {
     height: clamp(var(--cover-size), var(--cover-size), var(--cover-size));
     width: clamp(var(--cover-size), var(--cover-size), var(--cover-size));
     background: var(--bg_cover) no-repeat;
@@ -226,62 +47,79 @@ body{
     display: inline-block;
     top: 0;
     left: 0;
-    transition: all 1s ease 0s; 
-    
+    transition: all 1s ease 0s;
+
 }
-.record{
+
+.record {
     height: clamp(var(--cover-size), var(--cover-size), var(--cover-size));
     width: clamp(var(--cover-size), var(--cover-size), var(--cover-size));
-    background: url(./assets/02b11ede1981c7c9c5f5938e77fe2c8f753e00c7.png) no-repeat;
+    background: url(./assets/vinil.png) no-repeat;
     background-size: contain;
     position: absolute;
     z-index: 1;
     display: inline-block;
     top: 0;
     left: 0;
-    transition: left 1s ease 0s;  
+    transition: left 1s ease 0s;
 }
-@keyframes moving {
-    100% {transform: rotate(-360deg);}
-}
-	.record.active
-	{
-		left: -45%;
-        transition: left 1s ease 0s;
-        animation: moving 3s infinite linear;
-        transition: left 1s ease 0s;
-	}
 
-.wrap_cover{
+@keyframes moving {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.record.active {
+    left: -47%;
+    transition: left 1s ease 0s;
+    transition: left 1s ease 0s;
+    animation: moving 3s infinite linear;
+}
+
+.wrap_cover {
     display: flex;
     position: relative;
     justify-content: center;
     margin: 0 auto;
     filter: drop-shadow(1px 5px 10px black);
     height: var(--cover-size);
-    width:  var(--cover-size);
+    width: var(--cover-size);
+}
+.controls-btns{
+    fill: var(--svg-color);
+    margin-top: 10px;
 }
 
-button{
-    
+button,
+button:focus{
     background-color: transparent;
     border: none;
     outline: 0;
+    opacity: 0.6;
+    cursor: pointer;
 }
-button svg{
-    height: 50px;
-    width: 50px;
+button:hover{
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
 }
-.controls-time{
+
+button svg {
+    height: 30px;
+    width: 30px;
+}
+
+.controls-time {
     width: 100%;
 }
-.progress-bar{
+
+.progress-bar {
     width: 80%;
     margin: 0 auto;
 }
 
 
-.time{
+.time {
     min-width: 100%;
     display: flex;
     justify-content: space-between;
@@ -289,43 +127,63 @@ button svg{
 }
 
 
-.slider{
+.slider {
     width: 100%;
 }
+
 input[type='range'] {
     overflow: hidden;
     -webkit-appearance: none;
-    background-color: rgba(255,255,255,0.7);
-  }
-  
-  input[type='range']::-webkit-slider-runnable-track {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+input[type='range']::-webkit-slider-runnable-track {
     height: 10px;
     -webkit-appearance: none;
     color: #13bba4;
     margin-top: -1px;
-  }
-  
-  input[type='range']::-webkit-slider-thumb {
+}
+
+input[type='range']::-webkit-slider-thumb {
     width: 10px;
     -webkit-appearance: none;
     height: 10px;
     cursor: ew-resize;
     background: #434343;
     box-shadow: -1000px 0 0 1000px #43e5f7;
-  }
-  
-  input[type="range"]::-moz-range-progress {
+}
+
+input[type="range"]::-moz-range-progress {
     background-color: #43e5f7;
-  }
-  
-  input[type="range"]::-moz-range-track {
-    background-color: rgba(255,255,255,0.7);
-  }
-  
-  input[type="range"]::-ms-fill-lower {
+}
+
+input[type="range"]::-moz-range-track {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="range"]::-ms-fill-lower {
     background-color: #43e5f7;
-  }
-  
-  input[type="range"]::-ms-fill-upper {
-    background-color: rgba(255,255,255,0.7);
-  }
+}
+
+input[type="range"]::-ms-fill-upper {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+h1{
+    font-family: "Title";
+    transition: all 1s ease-in-out;
+    padding: 0;
+    margin: 15px 0 0 0;
+    cursor: default;
+}
+h2{
+    font-family: "Artist";
+    opacity: .6;
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+}
+h2:hover{
+    opacity: 1;
+}

@@ -34,6 +34,12 @@ let track_list = [
     image: "./assets/covers/the-motto.jpg",
     path: "./assets/audio/Tiesto feat. Ava Max - The Motto.mp3"
   },
+  {
+    name: "Flightless Bird, American Mouth",
+    artist: "Iron & Wine",
+    image: "./assets/covers/american-mouth.jpg",
+    path: "./assets/audio/Iron & Wine - Flightless Bird, American Mouth.mp3"
+  },
 ];
 
 audio.src=track_list[audio_index].path;
@@ -77,7 +83,7 @@ function play(){
     }
     
     audio.onended = next;
-    
+    fix();    
 }
 
 
@@ -87,6 +93,7 @@ function backToStart(){
         audio.pause();
         audio.currentTime = 0;    
         audio.play();
+        fix();
     }
     else
     previous();
@@ -107,7 +114,8 @@ function previous(){
     audio.currentTime = 0;    
     audio.play();
     changeStopToPlayImg();   
-    changeCoverTitleAuthor(audio_index);   
+    changeCoverTitleAuthor(audio_index);  
+    fix(); 
 }
 
 function next(){    
@@ -118,6 +126,7 @@ function next(){
     audio.play();
     changeStopToPlayImg();
     changeCoverTitleAuthor(audio_index);
+    fix();
 }
 
 function volume(){
@@ -151,11 +160,35 @@ function formatTime(str){
     return (minutes<10?'0'+minutes:minutes) + ':' + (seconds<10?'0'+seconds:seconds);
 }
 
+
+
 function changeCoverTitleAuthor(index){
     cover.style.backgroundImage = `url(${track_list[index].image})`;
+
+    //ищем основной цвет
+    const fac = new FastAverageColor();
+    let img = new Image();
+    img.src = track_list[index].image;
+    fac.getColorAsync(img)
+            .then(color => {
+                document.body.style.backgroundColor = color.rgba;
+                document.body.style.color = color.isDark ? '#fff' : '#000';
+                document.querySelector('.controls-btns').style.setProperty('--svg-color', color.isDark ? '#fff' : '#000');
+            })
+            .catch(e => {
+                console.log(e);
+            });
+
     title.textContent = track_list[index].name;
-    author.textContent = track_list[index].artist;
+    author.textContent = track_list[index].artist;    
+}
+//убираю зависание цвеа на кнопках     
+function fix()
+{
+    var el = this;
+    var par = el.parentNode;
+    var next = el.nextSibling;
+    par.removeChild(el);
+    setTimeout(function() {par.insertBefore(el, next);}, 0)
 }
 
-//document.querySelector(".svg_mask").style.setProperty('--bg-color', 'salmon');
-//document.body.style.setProperty('--bg-color', 'salmon');
