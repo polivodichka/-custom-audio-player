@@ -65,6 +65,8 @@ previousBtn.addEventListener('dblclick', function (e) {
     console.log('large');
 });
 
+const muteBtn = document.querySelector('#mute');
+muteBtn.onclick = mute;
 audio.ontimeupdate = progressUpdate;
 
 
@@ -83,7 +85,7 @@ function play(){
     }
     
     audio.onended = next;
-    fix();    
+    
 }
 
 
@@ -93,7 +95,6 @@ function backToStart(){
         audio.pause();
         audio.currentTime = 0;    
         audio.play();
-        fix();
     }
     else
     previous();
@@ -114,8 +115,7 @@ function previous(){
     audio.currentTime = 0;    
     audio.play();
     changeStopToPlayImg();   
-    changeCoverTitleAuthor(audio_index);  
-    fix(); 
+    changeCoverTitleAuthor(audio_index);   
 }
 
 function next(){    
@@ -126,7 +126,6 @@ function next(){
     audio.play();
     changeStopToPlayImg();
     changeCoverTitleAuthor(audio_index);
-    fix();
 }
 
 function volume(){
@@ -151,6 +150,8 @@ function currentTimeUpdate(){
     audio.currentTime = v * duration / 10000;
     audio.play();
     changeStopToPlayImg();
+    
+    audio.onended = next;
 }
 
 function formatTime(str){
@@ -174,6 +175,7 @@ function changeCoverTitleAuthor(index){
                 document.body.style.backgroundColor = color.rgba;
                 document.body.style.color = color.isDark ? '#fff' : '#000';
                 document.body.style.setProperty('--svg-color', color.isDark ? '#fff' : '#000');
+                document.footer.style.setProperty('--svg-color', color.isDark ? '#fff' : '#000');
             })
             .catch(e => {
                 console.log(e);
@@ -182,13 +184,20 @@ function changeCoverTitleAuthor(index){
     title.textContent = track_list[index].name;
     author.textContent = track_list[index].artist;    
 }
-//убираю зависание цвеа на кнопках     
-function fix()
-{
-    var el = this;
-    var par = el.parentNode;
-    var next = el.nextSibling;
-    par.removeChild(el);
-    setTimeout(function() {par.insertBefore(el, next);}, 0)
+        
+function mute(){
+    if(document.querySelector('#mute.active')){
+        audio.muted = false;
+        muteBtn.classList.remove('active');
+        document.getElementById('mute-svg').href.baseVal = `sprite.svg#volume`;
+    }
+    else{        
+        audio.muted = true;
+        muteBtn.classList.toggle('active');
+        document.getElementById('mute-svg').href.baseVal = `sprite.svg#mute`;
+    }
+    
+    audio.onended = next;
+    
 }
 

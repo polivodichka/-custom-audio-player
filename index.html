@@ -10,54 +10,62 @@
 </head>
 
 <body>
-    <div class="wrapper">
-
-        <div class="wrap_cover" id="play_on_cover">
-            <div class="record"></div>
-            <div class="cover_img"></div>
-        </div>
-
-
-        <div class="progress-bar">
-            <h1 class="title"></h1>
-            <h2 class="author"></h2>
-            <input type="range" min="0" max="10000" id="progress" value="0" class="slider">
-            <div class="time">
-                <span id="currentTime">00:00</span>
-                <span id="duration">00:00</span>
+    <main>
+            <div class="wrap_cover" id="play_on_cover">
+                <div class="record"></div>
+                <div class="cover_img"></div>
             </div>
-
-            <div class="controls">
-                <div class="controls-btns">
-                    <button id="previous" class="control-btn" ><svg>
-                            <use xlink:href="sprite.svg#previous"></use>
-                        </svg></button>
-                    <button id="play" class="control-btn">
-                        <svg>
-                            <use xlink:href="sprite.svg#play" id="play-svg"></use>
-                        </svg>
-                    </button>
-                    <button id="next" class="control-btn"><svg>
-                            <use xlink:href="sprite.svg#next"></use>
-                        </svg>
-                    </button>
+    
+    
+            <div class="progress-bar">
+                <h1 class="title"></h1>
+                <h2 class="author"></h2>
+                <input type="range" min="0" max="10000" id="progress" value="0" class="slider">
+                <div class="time">
+                    <span id="currentTime">00:00</span>
+                    <span id="duration">00:00</span>
                 </div>
-                <div class="control-btns-right">
-                    <button id="mute" class="control-btn"><svg>
-                        <use xlink:href="sprite.svg#volume"></use>
-                    </svg>
-                    </button>
-                    <div class="volume">                    
-                        <input type="range" id="volume" min="0" max="100" >
+    
+                <div class="controls">
+                    <div class="controls-btns">
+                        <button id="previous" class="control-btn" ><svg>
+                                <use xlink:href="sprite.svg#previous"></use>
+                            </svg></button>
+                        <button id="play" class="control-btn">
+                            <svg>
+                                <use xlink:href="sprite.svg#play" id="play-svg"></use>
+                            </svg>
+                        </button>
+                        <button id="next" class="control-btn"><svg>
+                                <use xlink:href="sprite.svg#next"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="control-btns-right">
+                        <button id="mute" class="control-btn"><svg>
+                            <use xlink:href="sprite.svg#volume" id="mute-svg"></use>
+                        </svg>
+                        </button>
+                        <div class="volume">                    
+                            <input type="range" id="volume" min="0" max="100" >
+                        </div>
                     </div>
                 </div>
             </div>
+    </main>
+    <footer>
+        <div class="footer-data">
+            <p class="footer-item">©</p>
+            <p class="footer-item">2022</p>
+            <a href="https://github.com/polivodichka" class="footer-item">github</a>
         </div>
-    </div>
-
-    <script src="https://unpkg.com/fast-average-color/dist/index.min.js"></script>
-    <script src="script.js"></script>
-
+    
+        <a href="https://rs.school/js-stage0/" id="school_link">Rolling Scopes School</a>
+       
+    </footer> 
 </body>
 
+
+<script src="https://unpkg.com/fast-average-color/dist/index.min.js"></script>
+<script src="script.js"></script>   
 </html>
