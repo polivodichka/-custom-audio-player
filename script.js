@@ -40,6 +40,12 @@ let track_list = [
     image: "./assets/covers/american-mouth.jpg",
     path: "./assets/audio/Iron & Wine - Flightless Bird, American Mouth.mp3"
   },
+  {
+    name: "All I Want",
+    artist: "Kodaline",
+    image: "./assets/covers/all-i-want.jpg",
+    path: "./assets/audio/Kodaline - All I Want.mp3"
+  },
 ];
 
 let save_track_list = Array.from(track_list);
