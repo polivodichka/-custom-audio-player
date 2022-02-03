@@ -264,7 +264,7 @@ footer a{
         --cover-size: 100vw;
     }
     .wrap_cover {
-        top: 30vh;
+        top: calc(90*var(--cover-size)/200);
     }    
     .record {
         transition: top 1s ease 0s;
