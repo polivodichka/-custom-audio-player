@@ -79,7 +79,7 @@ html {
 .wrap_cover {
     display: flex;
     position: relative;
-    top: 10vh;
+    top: 5vh;
     justify-content: center;
     margin: 0 auto;
     filter: drop-shadow(1px 5px 10px black);
@@ -104,7 +104,7 @@ button:focus{
     background-color: transparent;
     border: none;
     outline: 0;
-    opacity: 0.6;
+    opacity: 0.8;
     cursor: pointer;
     z-index: 2;
 }
@@ -205,9 +205,9 @@ h2:hover{
     padding: 0;
     width: fit-content;
     height: 40px;
-    position: relative;
-    margin-top: -25px;
-    margin-left: -87.5px;
+    position: absolute;
+    margin-top: -30px;
+    margin-left: -47.5px;
     opacity: 0;
     cursor: pointer;
 }
@@ -252,4 +252,8 @@ footer a{
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+}
+.off,
+.off:focus{
+    opacity: 0.3;
 }

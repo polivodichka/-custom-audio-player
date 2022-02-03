@@ -42,6 +42,8 @@ let track_list = [
   },
 ];
 
+let save_track_list = Array.from(track_list);
+
 audio.src=track_list[audio_index].path;
 changeCoverTitleAuthor(audio_index);
 
@@ -69,6 +71,13 @@ const muteBtn = document.querySelector('#mute');
 muteBtn.onclick = mute;
 audio.ontimeupdate = progressUpdate;
 
+const shuffleBtn = document.querySelector('#shuffle');
+shuffleBtn.onclick = shuffle;
+
+const repeatBtn = document.querySelector('#repeat');
+repeatBtn.onclick = repeat;
+
+
 
 function play(){
     if(document.querySelector('#play.active')){
@@ -83,9 +92,8 @@ function play(){
         document.getElementById('play-svg').href.baseVal = `sprite.svg#pause`;
         record_disk.classList.toggle('active');
     }
-    
-    audio.onended = next;
-    
+
+    RepeatIfNecessary();
 }
 
 
@@ -151,7 +159,7 @@ function currentTimeUpdate(){
     audio.play();
     changeStopToPlayImg();
     
-    audio.onended = next;
+    RepeatIfNecessary();
 }
 
 function formatTime(str){
@@ -197,7 +205,60 @@ function mute(){
         document.getElementById('mute-svg').href.baseVal = `sprite.svg#mute`;
     }
     
-    audio.onended = next;
+    RepeatIfNecessary();
     
 }
 
+function shuffle(){
+    
+    console.log(audio.played);
+    if(shuffleBtn.classList.contains('off')){
+        track_list.sort(() => Math.random() - 0.5);
+        shuffleBtn.classList.remove('off');
+        audio_index = track_list.indexOf(save_track_list[audio_index]);
+        changeCoverTitleAuthor(audio_index);
+    }
+    else{
+        audio_index = save_track_list.indexOf(track_list[audio_index]);
+        track_list = Array.from(save_track_list);
+        shuffleBtn.classList.toggle('off');
+        changeCoverTitleAuthor(audio_index);
+    }
+
+    shuffleBtn.focus();
+      
+}
+
+function repeat(){
+    
+    console.log(audio.played);
+    if(repeatBtn.classList.contains('off')){
+        repeatBtn.classList.remove('off');
+    }
+    else if(!repeatBtn.classList.contains('off') && !repeatBtn.classList.contains('one')){
+        repeatBtn.classList.toggle('one');
+        document.getElementById('repeat-svg').href.baseVal = `sprite.svg#repeat-one`;
+    }
+    else{
+        repeatBtn.classList.remove('one');
+        repeatBtn.classList.toggle('off');
+        document.getElementById('repeat-svg').href.baseVal = `sprite.svg#repeat`;
+    }  
+    
+    RepeatIfNecessary();
+}
+
+function RepeatIfNecessary(){
+    if(repeatBtn.classList.contains('off')){
+        audio.onended = audio_index<track_list.length-1?next:play
+    }
+    else if(repeatBtn.classList.contains('one')){
+        audio.onended = restart;
+    }
+    else{
+        audio.onended = next;
+    }    
+}
+function restart(){
+    audio.play();
+}
