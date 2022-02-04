@@ -10,7 +10,7 @@
 
 :root {
     --bg_cover: url(./assets/covers/sia-angel-by-the-wings.jpg);
-    --cover-size: clamp(50px, min(50vw, 50vh), 450px);
+    --cover-size: clamp(50px, max(60vh,60vw), 100vw);
     --bg-color: white;
     --svg-color: black;
 }
@@ -35,7 +35,12 @@ html {
   main {
     /* Выставляем отступ с высотой footer и header */
     position: relative;
-   min-height: calc(100vh - 85px);
+   min-height: calc(100vh - 75px);
+ }
+ .cover-section{
+     height: 70vh;
+     display: flex;
+     align-items: center;
  }
 .cover_img {
     height: clamp(var(--cover-size), var(--cover-size), var(--cover-size));
@@ -78,8 +83,6 @@ html {
 
 .wrap_cover {
     display: flex;
-    position: relative;
-    top: 5vh;
     justify-content: center;
     margin: 0 auto;
     filter: drop-shadow(1px 5px 10px black);
@@ -230,11 +233,13 @@ footer{
     font-size: 20px;
     max-width: 80%;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 50px;
     justify-content: space-between;
     align-items: center;
     height: 70px;
     font-family: 'Artist';
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 footer a{
     text-decoration: none;
@@ -252,6 +257,9 @@ footer a{
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .off,
 .off:focus{
@@ -260,9 +268,6 @@ footer a{
 
 @media (max-width: 768px)
 {
-    :root {
-        --cover-size: 100vw;
-    }
     .wrap_cover {
         top: calc(50*var(--cover-size)/200);
     }    
