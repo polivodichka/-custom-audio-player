@@ -267,10 +267,7 @@ footer a{
 }
 
 @media (max-width: 768px)
-{
-    .wrap_cover {
-        top: calc(50*var(--cover-size)/200);
-    }    
+{ 
     .record {
         transition: top 1s ease 0s;
     }    
@@ -281,4 +278,8 @@ footer a{
         transition: top 1s ease 0s;
         animation: moving 3s infinite linear;
     }
+    
+ .cover-section{
+    height: 60vh;
+}
 }
