@@ -320,54 +320,6 @@ footer {
     }
 }
 
-.preloader {
-    /*фиксированное позиционирование*/
-    position: fixed;
-    /* координаты положения */
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    /* фоновый цвет элемента */
-    background: rgb(177, 191, 201);
-    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
-    z-index: 1001;
-}
-
-.preloader__row {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    margin-left: -70px;
-    margin-top: -70px;
-    width: 140px;
-    height: 140px;
-    text-align: center;
-    animation: preloader-rotate 2s infinite linear;
-}
-
-.preloader__item svg {
-    width: 140px;
-    height: 140px;
-    filter: drop-shadow(0 0 20px rgba(67, 229, 247, 0.8));
-    fill: #434343;
-}
-
-@keyframes preloader-rotate {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.loaded_hiding .preloader {
-    transition: 0.3s opacity;
-    opacity: 0;
-}
-
-.loaded .preloader {
-    display: none;
-}
-
 .info,
 .info:focus {
     position: absolute;
@@ -419,4 +371,92 @@ p,
 ul,
 li{
     cursor: default;
+}
+
+
+.preloader {
+	/*фиксированное позиционирование*/
+	position: fixed;
+	/* координаты положения */
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	/* фоновый цвет элемента */
+	background: #b1bfc9;
+	/* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+	z-index: 1001;
+  }
+  
+  .loaded_hiding .preloader {
+	transition: opacity .3s ease-in-out;
+	opacity: 0;
+  }
+  
+  .loaded .preloader {
+	display: none;
+  }
+  #loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 80px;
+    height: 80px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #70b9db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #559ad3;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #00aeff;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
