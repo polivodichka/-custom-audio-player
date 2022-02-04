@@ -35,7 +35,7 @@ html {
   main {
     /* Выставляем отступ с высотой footer и header */
     position: relative;
-   min-height: calc(100vh - 75px);
+    height: clamp(calc(100vh - 75px), calc(100vh - 75px), calc(100vh - 75px));
  }
  .cover-section{
      height: 70vh;
