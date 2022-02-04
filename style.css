@@ -101,12 +101,14 @@ main {
     position: absolute;
     top: 0;
     left: 0;
+    background-size: contain;
     display: inline-block;
     z-index: 0;
     transition: left 1s ease 0s;
     font-family: 'Artist';
     overflow-y: scroll;
     overflow-x: hidden;
+    backdrop-filter: blur(10px);
 }
 .text.active {
     backdrop-filter: blur(10px);
@@ -128,19 +130,8 @@ pre{
 }
 
 .text::-webkit-scrollbar {
-    width: 10px;
-    background-color: #f9f9fd;
-  }
-  
-  .text::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #43e5f7;
-  }
-  
-  .text::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
-    border-radius: 10px;
-    background-color: #f9f9fd;
+    width: 0px;
+    background-color: transparent;
   }
 
 .wrap_cover {

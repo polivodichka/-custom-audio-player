@@ -197,7 +197,7 @@ function formatTime(str) {
 
 function changeCoverTitleAuthor(index) {
     cover.style.backgroundImage = `url(${track_list[index].image})`;
-
+    document.querySelector('.bgimg').style.backgroundImage = `url(${track_list[index].image})`;
     //ищем основной цвет
     const fac = new FastAverageColor();
     let img = new Image();
@@ -206,7 +206,7 @@ function changeCoverTitleAuthor(index) {
         .then(color => {
             document.body.style.backgroundColor = color.rgba;
             document.body.style.color = color.isDark ? '#fff' : '#000';
-            document.querySelector('.text').style.backgroundColor = color.isDark ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.5)';
+            document.querySelector('.mask').style.backgroundColor = color.isDark ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.5)';
             document.body.style.setProperty('--svg-color', color.isDark ? '#fff' : '#000');
             document.footer.style.setProperty('--svg-color', color.isDark ? '#fff' : '#000');
         })
