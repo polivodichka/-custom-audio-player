@@ -8,6 +8,8 @@
     src: url("assets/fonts/FuturaLight.otf");
 }
 
+
+
 .preload {
     position : absolute;
     top      : -9999px;
@@ -293,3 +295,48 @@ main {
     height: clamp(calc(100vh - 200px), calc(100vh - 155px), calc(100vh - 200px));
  }
 }
+
+.preloader {
+	/*фиксированное позиционирование*/
+	position: fixed;
+	/* координаты положения */
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	/* фоновый цвет элемента */
+	background: rgb(177, 191, 201);
+	/* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+	z-index: 1001;
+  }
+  
+  .preloader__row {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	width: 140px;
+	height: 140px;
+	text-align: center;
+	animation: preloader-rotate 2s infinite linear;
+  }
+  .preloader__item svg{
+	width: 140px;
+	height: 140px;
+    filter: drop-shadow(0 0 20px rgba(67, 229, 247, 0.8));
+    fill: #434343;
+  }
+  
+  @keyframes preloader-rotate {
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+  
+  .loaded_hiding .preloader {
+	transition: 0.3s opacity;
+	opacity: 0;
+  }
+  
+  .loaded .preloader {
+	display: none;
+  }
