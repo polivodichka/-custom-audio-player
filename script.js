@@ -274,7 +274,7 @@ function restart() {
 document.addEventListener('keydown', e => {
     e.code === 'Space' ? play() :
         (e.code === 'MediaTrackNext' || e.code === 'ArrowRight') ? next() :
-        (e.code === 'MediaTrackPrevious' || e.code === 'ArrowLeft') ? previous() :
+        (e.code === 'MediaTrackPrevious' || e.code === 'ArrowLeft') ? backToStart() :
         e.code === 'ArrowUp' ? volume(1, 0) :
         e.code === 'ArrowDown' ? volume(0, 1) : 0;
 })
