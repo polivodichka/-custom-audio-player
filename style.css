@@ -8,6 +8,11 @@
     src: url("assets/fonts/FuturaLight.otf");
 }
 
+@font-face {
+    font-family: 'Info';
+    src: url("assets/fonts/caviar-dreams.ttf");
+}
+
 
 
 .preload {
@@ -361,4 +366,57 @@ footer {
 
 .loaded .preloader {
     display: none;
+}
+
+.info,
+.info:focus {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-family: 'Artist';
+    font-size: 20px;
+    opacity: 0.5;
+    cursor: help;
+    z-index: 100;
+}
+
+.info:hover {
+    opacity: 1;
+}
+
+.functionalInfo {
+    backdrop-filter: blur(20px);
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translate(-100%, 0);
+    transition: all 0.3s ease 0s;
+    width: 100%;
+    z-index: 10;
+}
+
+.functionalInfo._active {
+    right: 0;
+    transform: translate(0, 0);
+}
+
+.content{
+    width: clamp(100px, 100%, 700px);
+    font-family: 'Info';
+    font-size: 20px;
+    position: fixed;
+    left: 20px;
+    top: 50px;
+}
+li{
+    list-style-type: circle;
+    padding: 5px 0;
+}
+.content,
+p,
+ul,
+li{
+    cursor: default;
 }

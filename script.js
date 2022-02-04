@@ -1,4 +1,3 @@
-
 // Create the audio element for the player
 let audio = document.createElement('audio');
 let audio_index = 0;
@@ -9,8 +8,7 @@ let author = document.querySelector('.author');
 let record_disk = document.querySelector('.record');
 
 // Define the list of tracks that have to be played
-let track_list = [
-    {
+let track_list = [{
         name: "Angel by the wings",
         artist: "Sia",
         image: "./assets/covers/sia-angel-by-the-wings.jpg",
@@ -101,8 +99,7 @@ function play() {
         playBtn.classList.remove('active');
         document.getElementById('play-svg').href.baseVal = `sprite.svg#play`;
         record_disk.classList.remove('active');
-    }
-    else {
+    } else {
         audio.play();
         playBtn.classList.toggle('active');
         document.getElementById('play-svg').href.baseVal = `sprite.svg#pause`;
@@ -119,8 +116,7 @@ function backToStart() {
         audio.pause();
         audio.currentTime = 0;
         audio.play();
-    }
-    else
+    } else
         previous();
 }
 
@@ -151,6 +147,7 @@ function next() {
     changeStopToPlayImg();
     changeCoverTitleAuthor(audio_index);
 }
+
 function volume(plus = 0, minus = 0) {
     let v = this.value ? this.value : audio.volume * 100;
     v = v + plus <= 100 ? v + plus : v;
@@ -159,6 +156,7 @@ function volume(plus = 0, minus = 0) {
 
     document.querySelector('#volume').value = v;
 }
+
 function progressUpdate() {
     let duration = audio.duration;
     let currentTime = audio.currentTime;
@@ -166,6 +164,7 @@ function progressUpdate() {
     document.querySelector('#currentTime').textContent = formatTime(currentTime);
     document.querySelector('#duration').textContent = duration ? formatTime(duration) : "00:00";
 }
+
 function currentTimeUpdate() {
     let v = this.value;
     let duration = audio.duration;
@@ -213,8 +212,7 @@ function mute() {
         audio.muted = false;
         muteBtn.classList.remove('active');
         document.getElementById('mute-svg').href.baseVal = `sprite.svg#volume`;
-    }
-    else {
+    } else {
         audio.muted = true;
         muteBtn.classList.toggle('active');
         document.getElementById('mute-svg').href.baseVal = `sprite.svg#mute`;
@@ -231,8 +229,7 @@ function shuffle() {
         shuffleBtn.classList.remove('off');
         audio_index = track_list.indexOf(save_track_list[audio_index]);
         changeCoverTitleAuthor(audio_index);
-    }
-    else {
+    } else {
         audio_index = save_track_list.indexOf(track_list[audio_index]);
         track_list = Array.from(save_track_list);
         shuffleBtn.classList.toggle('off');
@@ -247,12 +244,10 @@ function repeat() {
 
     if (repeatBtn.classList.contains('off')) {
         repeatBtn.classList.remove('off');
-    }
-    else if (!repeatBtn.classList.contains('off') && !repeatBtn.classList.contains('one')) {
+    } else if (!repeatBtn.classList.contains('off') && !repeatBtn.classList.contains('one')) {
         repeatBtn.classList.toggle('one');
         document.getElementById('repeat-svg').href.baseVal = `sprite.svg#repeat-one`;
-    }
-    else {
+    } else {
         repeatBtn.classList.remove('one');
         repeatBtn.classList.toggle('off');
         document.getElementById('repeat-svg').href.baseVal = `sprite.svg#repeat`;
@@ -264,14 +259,13 @@ function repeat() {
 function RepeatIfNecessary() {
     if (repeatBtn.classList.contains('off')) {
         audio.onended = audio_index < track_list.length - 1 ? next : play
-    }
-    else if (repeatBtn.classList.contains('one')) {
+    } else if (repeatBtn.classList.contains('one')) {
         audio.onended = restart;
-    }
-    else {
+    } else {
         audio.onended = next;
     }
 }
+
 function restart() {
     audio.play();
 }
@@ -280,7 +274,23 @@ function restart() {
 document.addEventListener('keydown', e => {
     e.code === 'Space' ? play() :
         (e.code === 'MediaTrackNext' || e.code === 'ArrowRight') ? next() :
-            (e.code === 'MediaTrackPrevious' || e.code === 'ArrowLeft') ? previous() :
-                e.code === 'ArrowUp' ? volume(1, 0) :
-                    e.code === 'ArrowDown' ? volume(0, 1) : 0;
+        (e.code === 'MediaTrackPrevious' || e.code === 'ArrowLeft') ? previous() :
+        e.code === 'ArrowUp' ? volume(1, 0) :
+        e.code === 'ArrowDown' ? volume(0, 1) : 0;
+})
+
+const infoBtn = document.querySelector('.info');
+const infoWindow = document.querySelector('.functionalInfo');
+if (infoBtn) {
+    infoBtn.addEventListener("click", function (e) {
+        document.body.classList.toggle('_lock');
+        infoBtn.classList.toggle('_active');
+        infoWindow.classList.toggle('_active');
+    })
+}
+
+infoWindow.addEventListener("click", function (e) {
+    document.body.classList.remove('_lock');
+    infoBtn.classList.remove('_active');
+    infoWindow.classList.remove('_active');
 })
