@@ -230,14 +230,15 @@ h2:hover {
     height: 40px;
     position: absolute;
     margin-top: -30px;
-    margin-left: -40px;
-    opacity: 0;
+    margin-left: -42px;
     cursor: pointer;
+    animation: disappear 1s forwards;
+    overflow: visible;
 }
 
-.volume.hover {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+.hover {
+    transition: display 0.5s ease-in-out;
+    animation: appear 0.3s forwards;
 }
 
 #volume {
@@ -248,6 +249,33 @@ h2:hover {
     left: 0;
     cursor: pointer;
     transform: rotate(-90deg);
+}
+
+@keyframes disappear {
+    0%{
+        opacity: 1;
+      }
+      50%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 0;
+        display: none;
+        z-index: -6;
+      }
+}
+@keyframes appear {
+    100%{
+        opacity: 1;
+      }
+      50%{
+        opacity: 0.5;
+      }
+      0%{
+        display: block;
+        z-index: 6;
+        opacity: 0;
+      }
 }
 
 footer {
@@ -291,6 +319,11 @@ footer {
     padding: 0;
     margin-top: 0;
     margin-bottom: 0;
+}
+.footer img{
+    height: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 .off,
@@ -355,7 +388,7 @@ footer {
 }
 
 .content{
-    width: clamp(100px, 90%, 700px);
+    width: clamp(50px, 90%, 700px);
     font-family: 'Info';
     font-size: 20px;
     position: fixed;
