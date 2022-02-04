@@ -14,10 +14,6 @@
     --bg-color: white;
     --svg-color: black;
 }
-*{
-    box-sizing: border-box;
-}
-
 html {
     /* Растягиваем документ на всю высоту окна */
     height: clamp(100vh, 100vh, 100vh);
@@ -34,11 +30,8 @@ html {
   }
   main {
     /* Выставляем отступ с высотой footer и header */
-    position: relative;    
-    top: 0;
-    left: 0;
-    right: 0;
-    height: clamp(calc(100vh - 75px), calc(100vh - 75px), calc(100vh - 75px));
+    height: clamp(100vh, 100vh, 100vh);
+    border: 1px solid lime;
  }
  .cover-section{
      height: 70vh;
@@ -132,7 +125,7 @@ button svg {
     width: 80%;
     margin: 0 auto;   
     position:absolute;
-    bottom:0; 
+    bottom: 100px; 
     left: 0;
     right: 0;
 }
@@ -230,7 +223,12 @@ h2:hover{
     cursor: pointer;
     transform: rotate(-90deg);
 }
-
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 .footer{
     display: flex;
     font-size: 20px;
@@ -286,9 +284,6 @@ h2:hover{
     height: 60vh;
 }
 main {
-    height: clamp(calc(100vh - 105px), calc(100vh - 105px), calc(100vh - 105px));
- }
- footer{
-
+    height: clamp(calc(100vh - 200px), calc(100vh - 155px), calc(100vh - 200px));
  }
 }
