@@ -403,7 +403,7 @@ footer {
 }
 
 .content{
-    width: clamp(100px, 100%, 700px);
+    width: clamp(100px, 90%, 700px);
     font-family: 'Info';
     font-size: 20px;
     position: fixed;
