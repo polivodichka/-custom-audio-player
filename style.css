@@ -95,7 +95,7 @@ main {
     animation: moving 3s infinite linear;
 }
 
-.text{
+.text {
     height: clamp(var(--cover-size), var(--cover-size), var(--cover-size));
     width: clamp(var(--cover-size), var(--cover-size), var(--cover-size));
     position: absolute;
@@ -105,34 +105,42 @@ main {
     display: inline-block;
     z-index: 0;
     transition: left 1s ease 0s;
-    font-family: 'Artist';
     overflow-y: scroll;
     overflow-x: hidden;
     backdrop-filter: blur(10px);
 }
+
 .text.active {
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.5);
     z-index: 3;
 }
-.text pre{
+
+.text pre {
     padding-top: 20px;
     padding-left: 20px;
     font-size: 18px;
+    font-family: 'Artist';
 }
-pre{
-    
-    white-space: pre-wrap;       /* css-3 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+
+pre {
+
+    white-space: pre-wrap;
+    /* css-3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */
 }
 
 .text::-webkit-scrollbar {
     width: 0px;
     background-color: transparent;
-  }
+}
 
 .wrap_cover {
     display: flex;
@@ -291,30 +299,35 @@ h2:hover {
 }
 
 @keyframes disappear {
-    0%{
+    0% {
         opacity: 1;
-      }
-      50%{
+    }
+
+    50% {
         opacity: 0;
-      }
-      100%{
+    }
+
+    100% {
         opacity: 0;
         display: none;
         z-index: -6;
-      }
+    }
 }
+
 @keyframes appear {
-    100%{
+    100% {
         opacity: 1;
-      }
-      50%{
+    }
+
+    50% {
         opacity: 0.5;
-      }
-      0%{
+    }
+
+    0% {
         display: block;
         z-index: 6;
         opacity: 0;
-      }
+    }
 }
 
 footer {
@@ -359,7 +372,8 @@ footer {
     margin-top: 0;
     margin-bottom: 0;
 }
-.footer img{
+
+.footer img {
     height: 20px;
     padding: 0;
     margin: 0;
@@ -426,7 +440,7 @@ footer {
     transform: translate(0, 0);
 }
 
-.content{
+.content {
     width: clamp(50px, 90%, 700px);
     font-family: 'Info';
     font-size: 20px;
@@ -434,41 +448,44 @@ footer {
     left: 20px;
     top: 50px;
 }
-li{
+
+li {
     list-style-type: circle;
     padding: 5px 0;
 }
+
 .content,
 p,
 ul,
-li{
+li {
     cursor: default;
 }
 
 
 .preloader {
-	/*фиксированное позиционирование*/
-	position: fixed;
-	/* координаты положения */
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	/* фоновый цвет элемента */
-	background: #b1bfc9;
-	/* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
-	z-index: 1001;
-  }
-  
-  .loaded_hiding .preloader {
-	transition: opacity .3s ease-in-out;
-	opacity: 0;
-  }
-  
-  .loaded .preloader {
-	display: none;
-  }
-  #loader {
+    /*фиксированное позиционирование*/
+    position: fixed;
+    /* координаты положения */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* фоновый цвет элемента */
+    background: #b1bfc9;
+    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+    z-index: 1001;
+}
+
+.loaded_hiding .preloader {
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+}
+
+.loaded .preloader {
+    display: none;
+}
+
+#loader {
     display: block;
     position: relative;
     left: 50%;
@@ -482,6 +499,7 @@ li{
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
 }
+
 #loader:before {
     content: "";
     position: absolute;
@@ -495,6 +513,7 @@ li{
     -webkit-animation: spin 3s linear infinite;
     animation: spin 3s linear infinite;
 }
+
 #loader:after {
     content: "";
     position: absolute;
@@ -508,24 +527,28 @@ li{
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite;
 }
+
 @-webkit-keyframes spin {
-    0%   {
+    0% {
         -webkit-transform: rotate(0deg);
         -ms-transform: rotate(0deg);
         transform: rotate(0deg);
     }
+
     100% {
         -webkit-transform: rotate(360deg);
         -ms-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
+
 @keyframes spin {
-    0%   {
+    0% {
         -webkit-transform: rotate(0deg);
         -ms-transform: rotate(0deg);
         transform: rotate(0deg);
     }
+
     100% {
         -webkit-transform: rotate(360deg);
         -ms-transform: rotate(360deg);
