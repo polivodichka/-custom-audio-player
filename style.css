@@ -8,6 +8,13 @@
     src: url("assets/fonts/FuturaLight.otf");
 }
 
+.preload {
+    position : absolute;
+    top      : -9999px;
+    height   : 1px;
+    width    : 1px;
+    overflow : hidden;
+}
 :root {
     --bg_cover: url(./assets/covers/sia-angel-by-the-wings.jpg);
     --cover-size: clamp(50px, max(50vh,30vw), 90vw);
