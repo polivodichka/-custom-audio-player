@@ -20,7 +20,7 @@
 
 html {
     /* Растягиваем документ на всю высоту окна */
-    height: 100%;
+    height: clamp(100vh, 100vh, 100vh);
     margin: 0;
     padding: 0;
   }
@@ -34,7 +34,10 @@ html {
   }
   main {
     /* Выставляем отступ с высотой footer и header */
-    position: relative;
+    position: relative;    
+    top: 0;
+    left: 0;
+    right: 0;
     height: clamp(calc(100vh - 75px), calc(100vh - 75px), calc(100vh - 75px));
  }
  .cover-section{
@@ -272,7 +275,7 @@ footer a{
         transition: top 1s ease 0s;
     }    
     .record.active {
-        top: -47%;
+        top: 30%;
         left: 0;
         transition: top 1s ease 0s;
         transition: top 1s ease 0s;
@@ -282,4 +285,11 @@ footer a{
  .cover-section{
     height: 50vh;
 }
+main {
+    /* Выставляем отступ с высотой footer и header */
+    position: relative;
+    left: 0;
+    right: 0;
+    height: clamp(calc(100vh - 105px), calc(100vh - 105px), calc(100vh - 105px));
+ }
 }
