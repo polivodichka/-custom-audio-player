@@ -59,6 +59,7 @@ const playBtnCover = document.querySelector('#play_on_cover');
 playBtn.onclick = play;
 playBtnCover.onclick = play;
 
+audio.volume = 0.5;
 document.querySelector('#volume').oninput = volume;
 
 const progress = document.querySelector('#progress');
@@ -69,12 +70,21 @@ nextBtn.onclick = next;
 
 const previousBtn = document.querySelector('#previous');
 previousBtn.onclick = backToStart;
-previousBtn.addEventListener('dblclick', function (e) {
-    console.log('large');
-});
 
 const muteBtn = document.querySelector('#mute');
 muteBtn.onclick = mute;
+muteBtn.addEventListener('mouseover', e=>{
+    document.querySelector('.volume').classList.toggle('hover');
+})
+muteBtn.addEventListener('mouseout', e=>{
+    document.querySelector('.volume').classList.remove('hover');
+})
+document.querySelector('.volume').addEventListener('mouseover', e=>{
+    document.querySelector('.volume').classList.toggle('hover');
+})
+document.querySelector('.volume').addEventListener('mouseout', e=>{
+    document.querySelector('.volume').classList.remove('hover');
+})
 audio.ontimeupdate = progressUpdate;
 
 const shuffleBtn = document.querySelector('#shuffle');
@@ -141,12 +151,13 @@ function next(){
     changeStopToPlayImg();
     changeCoverTitleAuthor(audio_index);
 }
-
-function volume(){
-    let v = this.value;
-    
-    console.log(v);
+function volume(plus = 0, minus = 0){
+    let v = this.value?this.value:audio.volume*100;
+    v = v+plus<=100?v+plus:v;
+    v = v-minus>=0?v-minus:v;
     audio.volume = v/100;
+    
+    document.querySelector('#volume').value  = v;
 }
 function progressUpdate(){
     let duration = audio.duration;
@@ -156,9 +167,7 @@ function progressUpdate(){
     document.querySelector('#duration').textContent = duration?formatTime(duration):"00:00";
 }
 function currentTimeUpdate(){
-    console.log('hey')
     let v = this.value;
-    console.log(v);
     let duration = audio.duration;
     audio.pause();
     audio.currentTime = v * duration / 10000;
@@ -217,7 +226,6 @@ function mute(){
 
 function shuffle(){
     
-    console.log(audio.played);
     if(shuffleBtn.classList.contains('off')){
         track_list.sort(() => Math.random() - 0.5);
         shuffleBtn.classList.remove('off');
@@ -237,7 +245,6 @@ function shuffle(){
 
 function repeat(){
     
-    console.log(audio.played);
     if(repeatBtn.classList.contains('off')){
         repeatBtn.classList.remove('off');
     }
@@ -268,3 +275,12 @@ function RepeatIfNecessary(){
 function restart(){
     audio.play();
 }
+
+
+document.addEventListener('keydown', e=>{
+    e.code === 'Space'?play():
+    (e.code === 'MediaTrackNext' || e.code === 'ArrowRight') ?next():
+    (e.code === 'MediaTrackPrevious' || e.code === 'ArrowLeft')?previous():
+    e.code === 'ArrowUp'?volume(1, 0):
+    e.code === 'ArrowDown'?volume(0, 1):0;
+})

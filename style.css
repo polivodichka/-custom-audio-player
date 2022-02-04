@@ -31,7 +31,6 @@ html {
   main {
     /* Выставляем отступ с высотой footer и header */
     height: clamp(100vh, 100vh, 100vh);
-    border: 1px solid lime;
  }
  .cover-section{
      height: 70vh;
@@ -210,7 +209,7 @@ h2:hover{
     opacity: 0;
     cursor: pointer;
 }
-.volume:hover{
+.volume.hover{
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
