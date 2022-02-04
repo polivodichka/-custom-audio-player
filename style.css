@@ -11,41 +11,46 @@
 
 
 .preload {
-    position : absolute;
-    top      : -9999px;
-    height   : 1px;
-    width    : 1px;
-    overflow : hidden;
+    position: absolute;
+    top: -9999px;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
 }
+
 :root {
     --bg_cover: url(./assets/covers/sia-angel-by-the-wings.jpg);
-    --cover-size: clamp(50px, max(50vh,30vw), 90vw);
+    --cover-size: clamp(50px, max(50vh, 30vw), 90vw);
     --bg-color: white;
     --svg-color: black;
 }
+
 html {
     /* Растягиваем документ на всю высоту окна */
     height: clamp(100vh, 100vh, 100vh);
     margin: 0;
     padding: 0;
-  }
-  
-  body {
+}
+
+body {
     position: relative;
     margin: 0;
     padding: 0;
     min-height: 100%;
     transition: background-image 1s ease-in-out;
-  }
-  main {
+}
+
+main {
     /* Выставляем отступ с высотой footer и header */
     height: clamp(100vh, 100vh, 100vh);
- }
- .cover-section{
-     height: 70vh;
-     display: flex;
-     align-items: center;
- }
+}
+
+.cover-section {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
 .cover_img {
     height: clamp(var(--cover-size), var(--cover-size), var(--cover-size));
     width: clamp(var(--cover-size), var(--cover-size), var(--cover-size));
@@ -94,12 +99,14 @@ html {
     width: var(--cover-size);
     cursor: pointer;
 }
-.controls-btns, 
-.control-btns-right{
+
+.controls-btns,
+.control-btns-right {
     fill: var(--svg-color);
     display: flex;
 }
-.controls{
+
+.controls {
     margin-top: 5px;
     display: flex;
     justify-content: space-between;
@@ -107,7 +114,7 @@ html {
 }
 
 button,
-button:focus{
+button:focus {
     background-color: transparent;
     border: none;
     outline: 0;
@@ -115,7 +122,8 @@ button:focus{
     cursor: pointer;
     z-index: 2;
 }
-button:hover{
+
+button:hover {
     transition: opacity 0.5s ease-in-out;
     opacity: 1;
 }
@@ -131,9 +139,9 @@ button svg {
 
 .progress-bar {
     width: 80%;
-    margin: 0 auto;   
-    position:absolute;
-    bottom: 100px; 
+    margin: 0 auto;
+    position: absolute;
+    bottom: 100px;
     left: 0;
     right: 0;
 }
@@ -190,14 +198,15 @@ input[type=range]::-ms-fill-upper {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-h1{
+h1 {
     font-family: "Title";
     transition: all 1s ease-in-out;
     padding: 0;
     margin: 15px 0 0 0;
     cursor: default;
 }
-h2{
+
+h2 {
     font-family: "Artist";
     opacity: .6;
     font-size: 100%;
@@ -205,10 +214,12 @@ h2{
     margin: 0;
     cursor: default;
 }
-h2:hover{
+
+h2:hover {
     opacity: 1;
 }
-.volume{
+
+.volume {
     padding: 0;
     width: fit-content;
     height: 40px;
@@ -218,11 +229,13 @@ h2:hover{
     opacity: 0;
     cursor: pointer;
 }
-.volume.hover{
+
+.volume.hover {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
-#volume{
+
+#volume {
     padding: 0 !important;
     margin: 0 !important;
     position: relative;
@@ -231,13 +244,15 @@ h2:hover{
     cursor: pointer;
     transform: rotate(-90deg);
 }
-footer{
+
+footer {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
 }
-.footer{
+
+.footer {
     display: flex;
     font-size: 20px;
     max-width: 80%;
@@ -250,7 +265,8 @@ footer{
     padding-bottom: 0;
     margin-bottom: 0;
 }
-.footer a{
+
+.footer a {
     text-decoration: none;
     color: var(--svg-color);
 }
@@ -260,7 +276,8 @@ footer{
     padding: 0;
     margin: 0;
 }
-.footer-item{
+
+.footer-item {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -270,16 +287,17 @@ footer{
     margin-top: 0;
     margin-bottom: 0;
 }
+
 .off,
-.off:focus{
+.off:focus {
     opacity: 0.3;
 }
 
-@media (max-width: 768px)
-{ 
+@media (max-width: 768px) {
     .record {
         transition: top 1s ease 0s;
-    }    
+    }
+
     .record.active {
         top: 30%;
         left: 0;
@@ -287,56 +305,60 @@ footer{
         transition: top 1s ease 0s;
         animation: moving 3s infinite linear;
     }
-    
- .cover-section{
-    height: 60vh;
-}
-main {
-    height: clamp(calc(100vh - 200px), calc(100vh - 155px), calc(100vh - 200px));
- }
+
+    .cover-section {
+        height: 60vh;
+    }
+
+    main {
+        height: clamp(calc(100vh - 200px), calc(100vh - 155px), calc(100vh - 200px));
+    }
 }
 
 .preloader {
-	/*фиксированное позиционирование*/
-	position: fixed;
-	/* координаты положения */
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	/* фоновый цвет элемента */
-	background: rgb(177, 191, 201);
-	/* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
-	z-index: 1001;
-  }
-  
-  .preloader__row {
-	position: relative;
-	top: 50%;
-	left: 50%;
-	width: 140px;
-	height: 140px;
-	text-align: center;
-	animation: preloader-rotate 2s infinite linear;
-  }
-  .preloader__item svg{
-	width: 140px;
-	height: 140px;
+    /*фиксированное позиционирование*/
+    position: fixed;
+    /* координаты положения */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* фоновый цвет элемента */
+    background: rgb(177, 191, 201);
+    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+    z-index: 1001;
+}
+
+.preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: -70px;
+    margin-top: -70px;
+    width: 140px;
+    height: 140px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item svg {
+    width: 140px;
+    height: 140px;
     filter: drop-shadow(0 0 20px rgba(67, 229, 247, 0.8));
     fill: #434343;
-  }
-  
-  @keyframes preloader-rotate {
-	100% {
-	  transform: rotate(360deg);
-	}
-  }
-  
-  .loaded_hiding .preloader {
-	transition: 0.3s opacity;
-	opacity: 0;
-  }
-  
-  .loaded .preloader {
-	display: none;
-  }
+}
+
+@keyframes preloader-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+.loaded .preloader {
+    display: none;
+}

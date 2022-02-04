@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="preload" as="style" href="assets/covers/all-i-want.jpg">
     <link rel="preload" as="style" href="assets/covers/american-mouth.jpg">
     <link rel="preload" as="style" href="assets/covers/on-my-mind.jpg">
@@ -20,20 +20,21 @@
 </head>
 
 <body>
-    
+
     <div class="preloader">
         <div class="preloader__row">
-          <div class="preloader__item">
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<g>
-	<g>
-		<circle cx="256" cy="256" r="23.985"/>
-	</g>
-</g>
-<g>
-	<g>
-		<path d="M256,0C114.511,0,0,114.497,0,256c0,141.49,114.497,256,256,256c141.489,0,256-114.497,256-256
+            <div class="preloader__item">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                    style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <circle cx="256" cy="256" r="23.985" />
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path d="M256,0C114.511,0,0,114.497,0,256c0,141.49,114.497,256,256,256c141.489,0,256-114.497,256-256
 			C512,114.51,397.503,0,256,0z M71.048,192.711C64.099,213.022,60.577,234.316,60.577,256c0,9.063-7.347,16.41-16.41,16.41
 			c-9.063,0-16.411-7.347-16.411-16.41c0-25.308,4.117-50.175,12.239-73.914c2.933-8.575,12.261-13.153,20.839-10.214
 			C69.41,174.806,73.983,184.136,71.048,192.711z M393.368,256c0-9.063,7.347-16.41,16.411-16.41s16.41,7.347,16.41,16.41
@@ -48,77 +49,77 @@
 			c16.817,0,33.507-2.135,49.608-6.349c8.763-2.296,17.736,2.955,20.029,11.722C327.932,465.566,322.683,474.533,313.915,476.827z
 			 M377.635,449.166c-7.659,4.832-17.795,2.549-22.635-5.123c-4.836-7.664-2.543-17.799,5.122-22.635
 			c57.17-36.069,91.301-97.904,91.301-165.407c0-9.063,7.347-16.41,16.411-16.41c9.063,0,16.41,7.347,16.41,16.41
-			c0,39.244-10.13,77.955-29.297,111.948C436.376,400.887,409.641,428.971,377.635,449.166z"/>
-	</g>
-</g>
-</svg>
-          </div>
+			c0,39.244-10.13,77.955-29.297,111.948C436.376,400.887,409.641,428.971,377.635,449.166z" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <script>
+    <script>
         window.onload = function () {
-          document.body.classList.add('loaded_hiding');
-          window.setTimeout(function () {
-            document.body.classList.add('loaded');
-            document.body.classList.remove('loaded_hiding');
-          }, 500);
+            document.body.classList.add('loaded_hiding');
+            window.setTimeout(function () {
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loaded_hiding');
+            }, -500);
         }
     </script>
 
 
     <main>
-            <div class="cover-section">
-                <div class="wrap_cover" id="play_on_cover">
-                    <div class="record"></div>
-                    <div class="cover_img"></div>
-                </div>
+        <div class="cover-section">
+            <div class="wrap_cover" id="play_on_cover">
+                <div class="record"></div>
+                <div class="cover_img"></div>
             </div>
-    
-    
-            <div class="progress-bar">
-                <h1 class="title"></h1>
-                <h2 class="author"></h2>
-                <input type="range" min="0" max="10000" id="progress" value="0" class="slider">
-                <div class="time">
-                    <span id="currentTime">00:00</span>
-                    <span id="duration">00:00</span>
+        </div>
+
+
+        <div class="progress-bar">
+            <h1 class="title"></h1>
+            <h2 class="author"></h2>
+            <input type="range" min="0" max="10000" id="progress" value="0" class="slider">
+            <div class="time">
+                <span id="currentTime">00:00</span>
+                <span id="duration">00:00</span>
+            </div>
+
+            <div class="controls">
+                <div class="controls-btns">
+                    <button id="previous" class="control-btn"><svg>
+                            <use xlink:href="sprite.svg#previous"></use>
+                        </svg></button>
+                    <button id="play" class="control-btn">
+                        <svg>
+                            <use xlink:href="sprite.svg#play" id="play-svg"></use>
+                        </svg>
+                    </button>
+                    <button id="next" class="control-btn"><svg>
+                            <use xlink:href="sprite.svg#next"></use>
+                        </svg>
+                    </button>
                 </div>
-    
-                <div class="controls">
-                    <div class="controls-btns">
-                        <button id="previous" class="control-btn" ><svg>
-                                <use xlink:href="sprite.svg#previous"></use>
-                            </svg></button>
-                        <button id="play" class="control-btn">
-                            <svg>
-                                <use xlink:href="sprite.svg#play" id="play-svg"></use>
-                            </svg>
-                        </button>
-                        <button id="next" class="control-btn"><svg>
-                                <use xlink:href="sprite.svg#next"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="control-btns-right">
-                        <button id="mute" class="control-btn"><svg>
+                <div class="control-btns-right">
+                    <button id="mute" class="control-btn"><svg>
                             <use xlink:href="sprite.svg#volume" id="mute-svg"></use>
                         </svg>
-                        </button>
-                        <div class="volume">                    
-                            <input type="range" id="volume" min="0" max="100" value="50">
-                        </div>
-                        <button id="shuffle" class="control-btn off"><svg>
+                    </button>
+                    <div class="volume">
+                        <input type="range" id="volume" min="0" max="100" value="50">
+                    </div>
+                    <button id="shuffle" class="control-btn off"><svg>
                             <use xlink:href="sprite.svg#shuffle" id="shuffle-svg"></use>
                         </svg>
-                        </button>
-                        <button id="repeat" class="control-btn off"><svg>
+                    </button>
+                    <button id="repeat" class="control-btn off"><svg>
                             <use xlink:href="sprite.svg#repeat" id="repeat-svg"></use>
                         </svg>
-                        </button>
-                    </div>
+                    </button>
                 </div>
             </div>
+        </div>
     </main>
     <footer>
         <div class="footer">
@@ -127,11 +128,11 @@
                 <p class="footer-item">2022</p>
                 <a href="https://github.com/polivodichka" class="footer-item">github</a>
             </div>
-        
+
             <a href="https://rs.school/js-stage0/" id="school_link">Rolling Scopes School</a>
-           
+
         </div>
-    </footer> 
+    </footer>
 </body>
 
 <div class="preload">
@@ -143,5 +144,6 @@
 </div>
 
 <script src="https://unpkg.com/fast-average-color/dist/index.min.js"></script>
-<script src="script.js"></script>   
+<script src="script.js"></script>
+
 </html>
