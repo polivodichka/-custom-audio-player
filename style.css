@@ -10,7 +10,7 @@
 
 :root {
     --bg_cover: url(./assets/covers/sia-angel-by-the-wings.jpg);
-    --cover-size: clamp(50px, max(60vh,30vw), 100vw);
+    --cover-size: clamp(50px, max(50vh,30vw), 90vw);
     --bg-color: white;
     --svg-color: black;
 }
@@ -280,6 +280,6 @@ footer a{
     }
     
  .cover-section{
-    height: 60vh;
+    height: 50vh;
 }
 }
