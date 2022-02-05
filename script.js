@@ -13,6 +13,7 @@ let track_list = [{
     artist: "Sia",
     image: "./assets/covers/sia-angel-by-the-wings.jpg",
     path: "./assets/audio/Sia_-_Angel_By_The_Wings.mp3",
+    textColor: '#000',
     text: "Oh so, your wounds they show\nI know you have never felt so alone\nBut hold on, head up, be strong\nOh hold on, hold on until you hear them come\nHere they come, oh\n\nTake an angel by the wings\nBeg her now for anything\nBeg her now for one more day\nTake an angel by the wings\nTime to tell her everything\nAsk her for the strength to stay\n\nYou can, you can do anything, anything\nYou can do anything\nYou can, you can do anything, anything\nYou can do anything\nYou can, you can do anything, anything\nYou can do anything\nYou can, you can do anything, anything\nYou can do anything\n\nLook up, call to the sky\nOh, look up and don't ask why, oh\n\nJust take an angel by the wings\nBeg her now for anything\nBeg her now for one more day\nTake an angel by the wings\nTime to tell her anything\nAsk her for the strength to stay\n\nYou can, you can do anything, anything\nYou can do anything\nYou can, you can do anything, anything\nYou can do anything\nYou can, you can do anything, anything\nYou can do anything\nYou can, you can do anything, anything\nYou can do anything\n\nYou can, you can do anything, anything\nYou can do anything\nYou can, you can do anything, anything\nYou can do anything\nYou can, you can do anything, anything\nYou can do anything\nYou can, you can do anything, anything\nYou can do anything"
 },
 {
@@ -20,6 +21,7 @@ let track_list = [{
     artist: "JP Cooper",
     image: "./assets/covers/on-my-mind.jpg",
     path: "./assets/audio/JP Cooper - She's On My Mind.mp3",
+    textColor: '#fff',
     text: "She's on my mind, she's on my mind\nShe's on my mind, she's on my mind\nI can't sleep at night\n'Cause she ain't by my side\n\nI've seen a lot of pretty faces\nAin't nobody like you\nAnd I've never had a love like\nThe one we knew\nTell me why I had to play the clown\nAlways messing around\nCan't stop thinking how I let you down, down, down\n\nShe's on my mind, she's on my mind\nShe's on my mind, she's on my mind\nI can't sleep at night\n'Cause she ain't by my side\nShe's on my mind, she's on my mind\nShe's on my mind, she's on my mind\nI can't sleep at night\n'Cause she ain't by my side\nI can't sleep at night\n'Cause she ain't by my side\n\nMy friends say that she's a keeper\nBut I let her go\nDidn't know how much I need her\n'Til I was on my own\nI've been drinking but the truth won't drown\nNo, the truth won't drown\nBad medicine won't go down, down, down\n\nShe's on my mind, she's on my mind\nShe's on my mind, she's on my mind\nI can't sleep at night\n'Cause she ain't by my side\nShe's on my mind, she's on my mind\nShe's on my mind, she's on my mind\nI can't sleep at night\n'Cause she ain't by my side\n\nOoh, the cover's over\nIf I could dream I'd hold you\nCan't stop thinking, am I even\nOn your mind\nNow, the nights are colder\nMiss you on my shoulder\nMiss you there on my cheek\nEvery night\n\nShe's on my mind, she's on my mind\nShe's on my mind, she's on my mind\nI can't sleep at night\n'Cause she ain't by my side\n\nShe's on my mind, she's on my mind\nShe's on my mind, she's on my mind\nI can't sleep at night\n'Cause she ain't by my side\nShe's on my mind, she's on my mind\nShe's on my mind, she's on my mind\nI can't sleep at night\n'Cause she ain't by my side\n\nOoh, the cover's over\nMiss you on my shoulder\nMiss you there on my cheek\nEvery night\nShe's on my mind, she's on my mind\nShe's on my mind, she's on my mind\nI can't sleep at night\n'Cause she ain't by my side"
 },
 {
@@ -27,6 +29,7 @@ let track_list = [{
     artist: "Tiesto feat. Ava Max",
     image: "./assets/covers/the-motto.jpg",
     path: "./assets/audio/Tiesto feat. Ava Max - The Motto.mp3",
+    textColor: '#fff',
     text: "That's the motto (Mhm)\nThrow it back with no chaser, with no trouble (Mhm)\nPoppin' that moet, baby, let's make some bubbles (Mhm)\nPuffin' on that gelato, wanna be seeing double\nGotta do what you gotta\n\nBelieve it, we ain't got no plans to leave here\nTell all of your friends to be here\nWe ain't gonna sleep all weekend\nOh, you know, you know, you know\n\nThat's the motto (Mhm)\nDrop a few bills then pop a few champagne bottles (Mhm)\nThrowin' that money like you just won the lotto (Mhm)\nWe been up all damn summer\nMakin' that bread and butter\nTell me, did I just stutter?\nThat's the motto (Mhm)\nDrop a few bills then pop a few champagne bottles (Mhm)\nThrowin' that money like you just won the lotto (Mhm)\nWe been up all damn summer\nMakin' that bread and butter\nTell me, did I just stutter?\nThat's the motto (I feel it)\nThat's the motto (I feel it)\n\nHopped in the range, can't feel my face\nThe window's down\nBack to my place\nMy birthday cake is comin' out (Oh)\nThe way it's hittin' like, I could go all night\nDon't want no bloodshot eyes\nSo hold my drink, let's fly\n\nBelieve it, we ain't got no plans to leave here\nTell all of your friends to be here\nWe ain't gonna sleep all weekend\nOh, you know, you know, you know\n\nThat's the motto (Mhm)\nDrop a few bills then pop a few champagne bottles (Mhm)\nThrowin' that money like you just won the lotto (Mhm)\nWe been up all damn summer (Oh)\nMakin' that bread and butter (Yeah)\nTell me, did I just stutter?\nThat's the motto (Mhm)\nDrop a few bills then pop a few champagne bottles (Mhm)\nThrowin' that money like you just won the lotto (Mhm)\nWe been up all damn summer (Oh)\nMakin' that bread and butter\nTell me, did I just stutter?\nThat's the motto\nThat's the motto (Oh)\n\n(I feel it)\n(I feel it, feel it)\n(I feel it)\n(I feel it, feel it)\n(I feel it)"
 },
 {
@@ -34,6 +37,7 @@ let track_list = [{
     artist: "Iron & Wine",
     image: "./assets/covers/american-mouth.jpg",
     path: "./assets/audio/Iron & Wine - Flightless Bird, American Mouth.mp3",
+    textColor: '#000',
     text: "I was a quick-wet boy\nDiving too deep for coins\nAll of your street light eyes\nWide on my plastic toys\nThen when the cops closed the fair\nI cut my long baby hair\nStole me a dog-eared map\nAnd called for you everywhere\n\nHave I found you?\nFlightless bird, jealous, weeping\nOr lost you?\nAmerican mouth\nBig pill looming\n\nNow I'm a fat house cat\nNursing my sore blunt tongue\nWatching the warm poison rats\nCurl through the wide fence cracks\nPissing on magazine photos\nThose fishing lures\nThrown in the cold and clean\nBlood of Christ mountain stream\n\nHave I found you?\nFlightless bird, grounded, bleeding\nOr lost you?\nAmerican mouth\nBig pill stuck going down"
 },
 {
@@ -41,6 +45,7 @@ let track_list = [{
     artist: "Kodaline",
     image: "./assets/covers/all-i-want.jpg",
     path: "./assets/audio/Kodaline - All I Want.mp3",
+    textColor: '#000',
     text: "All I want is nothing more\nTo hear you knocking at my door\n'Cause if I could see your face once more\nI could die a happy man I'm sure\n\nWhen you said your last goodbye\nI died a little bit inside\nI lay in tears in bed all night\nAlone without you by my side\n\nBut if you loved me\nWhy'd you leave me?\nTake my body\nTake my body\nAll I want is\nAnd all I need is\nTo find somebody\nI'll find somebody like you\n\nOh oh\n\nSo you brought out the best of me\nA part of me I've never seen\nYou took my soul and wiped it clean\nOur love was made for movie screens\n\nBut if you loved me\nWhy'd you leave me?\nTake my body\nTake my body\nAll I want is\nAnd all I need is\nTo find somebody\nI'll find somebody\n\nOh\n\nIf you loved me\nWhy'd you leave me?\nTake my body\nTake my body\nAll I want is\nAnd all I need is\nTo find somebody\nI'll find somebody like you\n\nOh"
 },
 ];
@@ -195,8 +200,16 @@ function formatTime(str) {
 function changeCoverTitleAuthor(index) {
     cover.style.backgroundImage = `url(${track_list[index].image})`;
     document.querySelector('.bgimg').style.backgroundImage = `url(${track_list[index].image})`;
+    document.body.style.backgroundImage = `url(${track_list[index].image})`;
+    //document.querySelector('.functionalInfo').style.backgroundImage = `url(${track_list[index].image})`;
+    document.body.style.color = track_list[index].textColor;
+    document.querySelector('.mask').style.backgroundColor = track_list[index].textColor === '#fff' ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.5)';
+    document.body.style.setProperty('--svg-color', track_list[index].textColor);
+    
     //ищем основной цвет
-    const fac = new FastAverageColor();
+
+    //Так нельзя. А жаль((
+    /*const fac = new FastAverageColor();
     let img = new Image();
     img.src = track_list[index].image;
     fac.getColorAsync(img)
@@ -209,7 +222,7 @@ function changeCoverTitleAuthor(index) {
         })
         .catch(e => {
             console.log(e);
-        });
+        });*/
 
     title.textContent = track_list[index].name;
     author.textContent = track_list[index].artist;

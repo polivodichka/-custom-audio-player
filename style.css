@@ -43,8 +43,16 @@ body {
     padding: 0;
     min-height: 100%;
     transition: background-image 1s ease-in-out;
+    background-size: cover;
 }
-
+.glass{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(500px);
+}
 main {
     /* Выставляем отступ с высотой footer и header */
     height: clamp(100vh, 100vh, 100vh);
@@ -432,12 +440,17 @@ footer {
     transform: translate(-100%, 0);
     transition: all 0.3s ease 0s;
     width: 100%;
-    z-index: 10;
+    z-index: 101;
 }
 
 .functionalInfo._active {
     right: 0;
     transform: translate(0, 0);
+}
+
+.functionalInfo::-webkit-scrollbar {
+    width: 0px;
+    background-color: transparent;
 }
 
 .content {
@@ -446,7 +459,7 @@ footer {
     font-size: 20px;
     position: fixed;
     left: 20px;
-    top: 50px;
+    top: 20px;
 }
 
 li {
