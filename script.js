@@ -200,6 +200,7 @@ function formatTime(str) {
 function changeCoverTitleAuthor(index) {
     cover.style.backgroundImage = `url(${track_list[index].image})`;
     document.querySelector('.bgimg').style.backgroundImage = `url(${track_list[index].image})`;
+    
     document.body.style.backgroundImage = `url(${track_list[index].image})`;
     document.body.style.color = track_list[index].textColor;
     document.querySelector('.mask').style.backgroundColor = track_list[index].textColor === '#fff' ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.5)';
