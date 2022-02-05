@@ -44,6 +44,7 @@ body {
     min-height: 100%;
     transition: background-image 1s ease-in-out;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .glass {
