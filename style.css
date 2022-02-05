@@ -45,7 +45,8 @@ body {
     transition: background-image 1s ease-in-out;
     background-size: cover;
 }
-.glass{
+
+.glass {
     position: absolute;
     top: 0;
     left: 0;
@@ -53,6 +54,7 @@ body {
     width: 100vw;
     backdrop-filter: blur(500px);
 }
+
 main {
     /* Выставляем отступ с высотой footer и header */
     height: clamp(100vh, 100vh, 100vh);
@@ -476,16 +478,12 @@ li {
 
 
 .preloader {
-    /*фиксированное позиционирование*/
     position: fixed;
-    /* координаты положения */
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    /* фоновый цвет элемента */
     background: #b1bfc9;
-    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
     z-index: 1001;
 }
 
