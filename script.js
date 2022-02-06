@@ -1,3 +1,6 @@
+console.log('1. Вёрстка +10\n2. Кнопка Play/Pause +10\n3. При кликах по кнопкам "Вперёд" и "Назад" переключается проигрываемый аудиотрек. Аудиотреки пролистываются по кругу - после последнего идёт первый +10\n4. При смене аудиотрека меняется изображение - обложка аудиотрека +10\n5. Прогресс-бар отображает прогресс проигрывания текущего аудиотрека. При перемещении ползунка вручную меняется текущее время проигрывания аудиотрека +10\n6. Отображается продолжительность аудиотрека и его текущее время проигрывания +10\n7. Дополнительный не предусмотренный в задании функционал, улучшающий качество приложения +10\n ИТОГ: 70')
+
+
 // Create the audio element for the player
 let audio = document.createElement('audio');
 let audio_index = 0;
@@ -200,7 +203,7 @@ function formatTime(str) {
 function changeCoverTitleAuthor(index) {
     cover.style.backgroundImage = `url(${track_list[index].image})`;
     document.querySelector('.bgimg').style.backgroundImage = `url(${track_list[index].image})`;
-    
+
     document.body.style.backgroundImage = `url(${track_list[index].image})`;
     document.body.style.color = track_list[index].textColor;
     document.querySelector('.mask').style.backgroundColor = track_list[index].textColor === '#fff' ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.5)';
@@ -246,9 +249,16 @@ function mute() {
 function shuffle() {
 
     if (shuffleBtn.classList.contains('off')) {
-        track_list.sort(() => Math.random() - 0.5);
         shuffleBtn.classList.remove('off');
-        audio_index = track_list.indexOf(save_track_list[audio_index]);
+        //мешаю с проверкой на тот случай если вдруг не перемешается
+        do{
+            track_list.sort(() => Math.random() - 0.5);
+        }while(track_list.filter((element, index) => element.name === save_track_list[index].name).length === track_list.length)
+        let new_index = track_list.indexOf(save_track_list[audio_index]);
+
+        //меняю местами текущий трек с первым, чтобы длина плейлиста без режима повтора была нормальной
+        track_list[0] = [track_list[new_index], track_list[new_index] = track_list[0]][0];
+        audio_index = 0;
         changeCoverTitleAuthor(audio_index);
     } else {
         audio_index = save_track_list.indexOf(track_list[audio_index]);
