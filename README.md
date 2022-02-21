@@ -1,1 +1,6 @@
-[custom-audio-player](https://polivodichka.github.io/custom-audio-player/)
+## [Кастомный аудио-плеер](https://polivodichka.github.io/custom-audio-player/)
+Музыкальный плеер, позволяющий по очереди проигрывать музыкальные треки или перелистывать их кликами по кнопкам/с использованием клавиатуры. Добавлены режимы перемешивания, зацикливания всего списка воспроизведения или одного трека. Встроен текст песни.
+
+![image](https://user-images.githubusercontent.com/68563445/154960178-7cfe32b9-f1f5-4ec4-b64c-46339f0c6ad5.png)
+![image](https://user-images.githubusercontent.com/68563445/154960270-bdf7d125-e817-4a62-992b-a1f2c7b57b04.png)
+
