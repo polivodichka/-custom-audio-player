@@ -1,4 +1,4 @@
-## [Кастомный аудио-плеер](https://polivodichka.github.io/-custom-audio-player/)
+## [Кастомный аудио-плеер](https://polivodichka.github.io/custom-audio-player/)
 Кастомный музыкальный плеер, позволяющий по очереди проигрывать музыкальные треки или перелистывать их кликами по кнопкам/с использованием клавиатуры. Добавлены режимы перемешивания, зацикливания всего списка воспроизведения или одного трека. Встроен текст песни.
 
 Плеер был создан как решение [задачи](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/js30%23/js30-2.md) в рамках курса [JavaScript/Front-end. Stage 0](https://rs.school/js-stage0/).
