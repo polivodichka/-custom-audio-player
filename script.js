@@ -204,15 +204,15 @@ function changeCoverTitleAuthor(index) {
     cover.style.backgroundImage = `url(${track_list[index].image})`;
     document.querySelector('.bgimg').style.backgroundImage = `url(${track_list[index].image})`;
 
-    document.body.style.backgroundImage = `url(${track_list[index].image})`;
-    document.body.style.color = track_list[index].textColor;
-    document.querySelector('.mask').style.backgroundColor = track_list[index].textColor === '#fff' ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.5)';
-    document.body.style.setProperty('--svg-color', track_list[index].textColor);
+    //так можно но не нужно
+    //document.body.style.backgroundImage = `url(${track_list[index].image})`;
+    //document.body.style.color = track_list[index].textColor;
+    //document.querySelector('.mask').style.backgroundColor = track_list[index].textColor === '#fff' ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.5)';
+    //document.body.style.setProperty('--svg-color', track_list[index].textColor);
 
     //ищем основной цвет
-
     //Так нельзя. А жаль((
-    /*const fac = new FastAverageColor();
+    const fac = new FastAverageColor();
     let img = new Image();
     img.src = track_list[index].image;
     fac.getColorAsync(img)
@@ -225,7 +225,7 @@ function changeCoverTitleAuthor(index) {
         })
         .catch(e => {
             console.log(e);
-        });*/
+        });
 
     title.textContent = track_list[index].name;
     author.textContent = track_list[index].artist;
